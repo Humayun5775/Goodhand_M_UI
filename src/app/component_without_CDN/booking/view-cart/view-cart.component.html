@@ -1,0 +1,654 @@
+
+<input type="button" hidden #btncouponnyousave  data-toggle="modal" data-target="#couponnyousave" />
+  <input type="button" hidden #btncouponnoexist  data-toggle="modal" data-target="#couponnoexist" />
+  <input type="button" hidden #btninvalidotp  data-toggle="modal" data-target="#invalidotp" />
+  <input type="button" hidden #btnselectaddresss  data-toggle="modal" data-target="#selectaddresss" />
+  <input type="button" hidden #btnaddnewaddressmap  data-toggle="modal" data-target="#addnewaddressmap" />
+  <input type="button" hidden #btndataandslot  data-toggle="modal" data-target="#dataandslot" />
+  <input type="button" hidden #btnareyousure  data-toggle="modal" data-target="#areyousure" />
+
+  <div class="dv_skelton_load_branches overflow-hidden " style="height:100%; padding: initial; position: fixed; top: 0; z-index: 10; width: 100%; background: #ffffff; " *ngIf="IsPreLoading">
+    <ngx-skeleton-loader [theme]="{ height: '15px', width : '50%', margin: '10px 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+    <ngx-skeleton-loader [theme]="{ height: '15px', width : '60%', display:'block', margin: '0 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+    <ngx-skeleton-loader [theme]="{ height: '15px', width : '30%', margin: '0 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+    <ngx-skeleton-loader [theme]="{ height: '30px', width : '18%', right:'15px', position:'absolute', margin: '-15px 0px 10px 61px'}" appearance="line"></ngx-skeleton-loader>
+    <ngx-skeleton-loader [theme]="{ height: '1px', width : '95%', margin: '0px 0 15 15px'}" appearance="line"></ngx-skeleton-loader>
+    <ngx-skeleton-loader [theme]="{ height: '15px', width : '50%', margin: '10px 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+    <ngx-skeleton-loader [theme]="{ height: '15px', width : '60%', display:'block', margin: '0 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+    <ngx-skeleton-loader [theme]="{ height: '15px', width : '30%', margin: '0 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+    <ngx-skeleton-loader [theme]="{ height: '30px', width : '18%', right:'15px', position:'absolute', margin: '-15px 0px 10px 61px'}" appearance="line"></ngx-skeleton-loader>
+    <ngx-skeleton-loader [theme]="{ height: '1px', width : '95%', margin: '0px 0 15 15px'}" appearance="line"></ngx-skeleton-loader>
+    <ngx-skeleton-loader [theme]="{ height: '15px', width : '50%', margin: '10px 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+    <ngx-skeleton-loader [theme]="{ height: '15px', width : '60%', display:'block', margin: '0 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+    <ngx-skeleton-loader [theme]="{ height: '15px', width : '30%', margin: '0 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+    <ngx-skeleton-loader [theme]="{ height: '30px', width : '18%', right:'15px', position:'absolute', margin: '-15px 0px 10px 61px'}" appearance="line"></ngx-skeleton-loader>
+    <ngx-skeleton-loader [theme]="{ height: '1px', width : '95%', margin: '0px 0 15 15px'}" appearance="line"></ngx-skeleton-loader>
+    <ngx-skeleton-loader [theme]="{ height: '15px', width : '50%', margin: '10px 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+    <ngx-skeleton-loader [theme]="{ height: '15px', width : '60%', display:'block', margin: '0 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+    <ngx-skeleton-loader [theme]="{ height: '15px', width : '30%', margin: '0 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+    <ngx-skeleton-loader [theme]="{ height: '30px', width : '18%', right:'15px', position:'absolute', margin: '-15px 0px 10px 61px'}" appearance="line"></ngx-skeleton-loader>
+    <ngx-skeleton-loader [theme]="{ height: '1px', width : '95%', margin: '0px 0 15 15px'}" appearance="line"></ngx-skeleton-loader>
+    <ngx-skeleton-loader [theme]="{ height: '15px', width : '50%', margin: '10px 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+    <ngx-skeleton-loader [theme]="{ height: '15px', width : '60%', display:'block', margin: '0 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+    <ngx-skeleton-loader [theme]="{ height: '15px', width : '30%', margin: '0 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+    <ngx-skeleton-loader [theme]="{ height: '30px', width : '18%', right:'15px', position:'absolute', margin: '-15px 0px 10px 61px'}" appearance="line"></ngx-skeleton-loader>
+    <ngx-skeleton-loader [theme]="{ height: '1px', width : '95%', margin: '0px 0 15 15px'}" appearance="line"></ngx-skeleton-loader>
+    <ngx-skeleton-loader [theme]="{ height: '15px', width : '50%', margin: '10px 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+    <ngx-skeleton-loader [theme]="{ height: '15px', width : '60%', display:'block', margin: '0 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+    <ngx-skeleton-loader [theme]="{ height: '15px', width : '30%', margin: '0 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+    <ngx-skeleton-loader [theme]="{ height: '30px', width : '18%', right:'15px', position:'absolute', margin: '-15px 0px 10px 61px'}" appearance="line"></ngx-skeleton-loader>
+    <ngx-skeleton-loader [theme]="{ height: '1px', width : '95%', margin: '0px 0 15 15px'}" appearance="line"></ngx-skeleton-loader>
+    <ngx-skeleton-loader [theme]="{ height: '15px', width : '50%', margin: '10px 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+    <ngx-skeleton-loader [theme]="{ height: '15px', width : '60%', display:'block', margin: '0 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+    <ngx-skeleton-loader [theme]="{ height: '15px', width : '30%', margin: '0 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+    <ngx-skeleton-loader [theme]="{ height: '30px', width : '18%', right:'15px', position:'absolute', margin: '-15px 0px 10px 61px'}" appearance="line"></ngx-skeleton-loader>
+    <ngx-skeleton-loader [theme]="{ height: '1px', width : '95%', margin: '0px 0 15 15px'}" appearance="line"></ngx-skeleton-loader>
+  </div>
+<div class="dv_wrapper">
+  <!-- <app-header></app-header> -->
+    <div class="dv_header dv_diffrent_header h-auto border-bottom-0 pt-0">
+    <div class="container">
+      <div class="row">
+        <div class="dv_page_heading border-top-0 border-bottom mt-0 dv_height_search">
+          <span style="cursor:pointer;" (click)="Back()"><svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg> View cart</span>
+       
+              </div> 
+      </div>
+    </div>
+  </div>
+  <div class="dv_sub_category_page" *ngIf="!IsCartExist">
+    <div class="dv_subscategory_wrapper mt-3">
+      <div class="container">
+        <div class="dv_no_result mt-5 text-center">
+          <img style=" width: 70px; margin: 30px 0; " src="./assets/img/empty-cart.svg">
+          <h5>Empty cart </h5>
+          <p>Hey, it feels so empty here. </p>
+          <a href="javascript:void(0)" (click)="Back()">explore services </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="dv_sub_category_page"  [ngClass]="{'pb-200':(SlotTime!='' && SlotDate!='' && LocationAddress!=''),'pb-140': breakDownItem.tip==0,'pb-150':  breakDownItem.tip>0}" *ngIf="IsCartExist">
+      <div class="dv_subscategory_wrapper">
+        <div class="container">
+          <h4 class="dv_subscategory_heading">Added into cart </h4>
+          <div class="dv_subscategory_per_service_wrapper" *ngFor="let Service of mainList; index as i">
+            <div class="dv_subscategory_per_service_name font-weight-400 font-14">
+              {{Service.master_service_name}}
+              </div>
+              <!-- <div class="dv_subscategory_per_service_rating">
+                <div class="dv_star_fixed_for_all">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+                <span>4.7 </span> <strong>145</strong>
+              </div> -->
+              <ul class="dv_sub_service_rate_ul">
+                <li>AED {{Service.original_price}} </li>
+                <!-- <li>aed {{Service.discount_price+Service.original_price+60}}  </li> -->
+                <!-- <li>{{Service.duration}} Min</li> -->
+              </ul>
+              <ul *ngIf="Service.type!='' && Service.type" class="dv_sub_service_descrition_ul w-100" style=" border-top: 1px solid #ebebeb; padding-top: 15px; ">
+                <li > {{Service.master_service_name}}-{{Service.type}} x{{count[Service.master_service_id]}} </li>
+              </ul>
+              <!-- <ul class="dv_sub_service_descrition_ul"  style=" border-top: 1px solid #ebebeb; padding-top: 15px; ">
+              
+                <li>Creative Haircut x1</li>
+              </ul> -->
+              <div class="dv_plus_minus_wrap top-0">
+                <div class="dv_btn_loading_wrap" [ngClass]="{'d-block': isDisable[Service.master_service_id]==true}"><div class="dv_btn_loading"></div></div>
+                <div class="input-group">
+                  <span class="input-group-btn">
+                      <button type="button" class="btn btn-default btn-number" data-type="minus" (click)="minus(Service.master_service_id)" data-field="quant[1]" >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                      </button>
+                  </span>
+                  <input type="text" [(ngModel)]="count[Service.master_service_id]" name="quant[1]"  class="form-control input-number" value="{{Service.quantity}}" min="1" max="10">
+                  <span class="input-group-btn">
+                      <button type="button" class="btn btn-default btn-number" (click)="plus(Service.master_service_id)" data-type="plus" data-field="quant[1]" >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                      </button>
+                  </span>
+                </div>
+              </div>
+          
+          </div>
+      </div>
+      </div>
+      <hr  *ngIf="fatList.length>0" class="dv_bottom_space p-t-3" />
+      <div class="dv_subscategory_wrapper" *ngIf="fatList.length>0">
+        <div class="container">
+          <h4 class="dv_subscategory_heading">Frequently added together </h4>
+         
+          <swiper    [config]="config" class="swiper mySwiper mb-3">
+            <ng-template swiperSlide *ngFor="let item of fatList; index as i">
+              <div class="swiper-slide">
+                <div class="dv_per_product_slider">
+                  <img src="{{item.service_image}}">
+                  <h4>    {{item.name}}</h4>
+                  <ul class="dv_frq_service_rate_ul">
+                    <li>AED {{item.original_price}} </li>
+                  </ul>
+                  <div class="dv_plus_minus_wrap" *ngIf="IsAdded[item.master_service_id]" style=" position: sticky; margin: 16px auto 15px auto; ">
+              
+                    <div class="dv_btn_loading_wrap" [ngClass]="{'d-block': isDisable[item.master_service_id]==true}"><div class="dv_btn_loading"></div></div>
+                    <div class="input-group" *ngIf="IsAdded[item.master_service_id]">
+                      <span class="input-group-btn">
+                          <button type="button" class="btn btn-default btn-number" data-type="minus" (click)="minus(item.master_service_id)" data-field="quant[1]" >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                          </button>
+                      </span>
+                      <input type="text" [(ngModel)]="count[item.master_service_id]" name="quant[1]"  class="form-control input-number" value="{{item.quantity}}" min="1" max="10">
+                      <span class="input-group-btn">
+                          <button type="button" class="btn btn-default btn-number" (click)="plus(item.master_service_id)" data-type="plus" data-field="quant[1]" >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                          </button>
+                      </span>
+                    </div>
+                  </div> 
+                  <span  *ngIf="!IsAdded[item.master_service_id]">  <button type="button" class="btn btn-default dv_freq_add_ser_product" (click)="AddToCart(item.master_service_id,1,item.original_price)"> <div class="dv_btn_loading_wrap" [ngClass]="{'d-block': isDisable[item.master_service_id]==true}"><div class="dv_btn_loading"></div></div>add </button></span>
+          
+                </div>
+              </div>
+           </ng-template>
+          </swiper>
+        </div>
+      </div>
+      <hr _ngcontent-frt-c98="" class="dv_bottom_space mt-0">
+      <div *ngIf="!IsLoggedIn"  class="dv_coupon_code_wrapper pt-4 pb-2">
+        <div class="container"   data-toggle="modal" data-target="#mobilelogin" >
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="dv_coupon_code_svg"><line x1="19" y1="5" x2="5" y2="19"></line><circle cx="6.5" cy="6.5" r="2.5"></circle><circle cx="17.5" cy="17.5" r="2.5"></circle></svg>
+          <div class="dv_coupon_login_txt">
+            coupons & offers
+            <span>login & signup to views </span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </div>
+        </div>
+      </div>
+
+    <div *ngIf="IsLoggedIn && IsValidCoupon"   class="dv_coupon_code_wrapper pt-4 pb-2">
+      <div class="container">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="dv_coupon_code_svg"><line x1="19" y1="5" x2="5" y2="19"></line><circle cx="6.5" cy="6.5" r="2.5"></circle><circle cx="17.5" cy="17.5" r="2.5"></circle></svg>
+        <div class="dv_coupon_login_txt pt-1">
+          <strong>{{ValidCouponCode}} </strong> applied
+          <span class="dv_remove_code_applied" (click)="RemoveCoupon()">remove</span>
+        </div>
+      </div>
+    </div>
+    
+    <div *ngIf="IsLoggedIn && !IsValidCoupon"    class="dv_coupon_code_wrapper pt-4 pb-2">
+      <div class="container">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="dv_coupon_code_svg"><line x1="19" y1="5" x2="5" y2="19"></line><circle cx="6.5" cy="6.5" r="2.5"></circle><circle cx="17.5" cy="17.5" r="2.5"></circle></svg>
+        <div class="dv_coupon_login_txt pt-1">
+          coupons & offers
+          <span class="dv_remove_code_applied" data-toggle="modal" data-target="#couponsoffers" >{{CouponCount}} Offer</span>
+        </div>
+      </div>
+    </div>
+  
+      <!-- <div class="dv_subscategory_wrapper">
+        <div class="container">
+          <h4 class="dv_subscategory_heading">Coupon Code </h4>
+          
+          <div class="dv_coupon_code_wrap p-0">
+            <input type="text" class="form-control dv_custom_tip_enter mb-1" #txtCoupon  placeholder="Enter Coupon Code">
+            <button style="top:0; right:0;" type="button"  class="btn btn-default dv_valid_coupon_code" (click)="ValidCoupon(txtCoupon.value)">Valid </button>
+          </div>
+        </div>
+      </div> -->
+      <!-- <hr class="dv_bottom_space p-t-3">
+      <div class="dv_subscategory_wrapper">
+        <div class="container">
+          <img src="./assets/img/esaad-emirates-fazaa-card-offer.jpg" class="w-100 mt-3 mb-3"  alt="">
+        </div>
+      </div> -->
+      <hr _ngcontent-frt-c98="" class="dv_bottom_space mt-3">
+      <div class="dv_subscategory_wrapper">
+        <div class="container">
+          <h4 class="dv_subscategory_heading">Payment summery </h4>
+          <ul class="dv_payment_summery_cart_ul">
+            <li>item total <span>AED {{breakDownItem.total}}</span> </li>
+            <li>item discount <span class="dv_green_value"> - AED {{breakDownItem.discount}}</span> </li>
+            <li *ngIf="ValidCouponCode">offer code <strong>- {{ValidCouponCode}}</strong> <span class="dv_green_value"> - AED {{breakDownItem.offer}}</span> </li>
+            <li>membership discount <span class="dv_green_value"> - AED {{breakDownItem.mebership}}</span> </li>
+            <li *ngIf="breakDownItem.tip>0">Tip to Professional<span> AED {{breakDownItem.tip}}</span> </li>
+            <li>VAT <span> AED {{breakDownItem.vat}}</span> </li>
+            <li>Total <span>AED {{breakDownItem.grandTotal}} </span> </li>
+          </ul>
+          <span class="dv_u_save_on_final" *ngIf="IsValidCoupon">Yay! You have saved AED {{this.breakDownItem.offer}} on final bill </span>
+        </div>
+      </div>
+      <hr class="dv_bottom_space p-t-3">
+      <div class="dv_subscategory_wrapper">
+        <div class="container">
+          <h4 class="dv_subscategory_heading">Add tip to thank professional </h4>
+          <div class="dv_tip_added_wrapper">
+          <div class="btn-group mb-2 dv_group_btn_tip_professional" data-toggle="buttons">
+            <label class="btn btn-primary dv_lbl_btn_tip_professional"  [ngClass]="{'active': tipList[0]==true}" >
+              <input type="checkbox" name="options" id="option5" [(ngModel)]="tipList[0]" (change)="OtherAmount(5)"> AED 5
+            </label>
+            <label class="btn btn-primary dv_lbl_btn_tip_professional" [ngClass]="{'active': tipList[1]==true}"  >
+              <input type="checkbox" name="options" id="option10" [(ngModel)]="tipList[1]" (change)="OtherAmount(10)"> AED 10
+              <!-- <span style=" position: absolute; top: -13px; left: 0; right: 0; background: #4500ff20; color: #4500ff; font-weight: 600; font-size: 10px; width: 59px; text-transform: capitalize; margin: 0 auto; padding: 2px 0; border-radius: 4px; ">popular </span> -->
+            </label>
+            <label class="btn btn-primary dv_lbl_btn_tip_professional" [ngClass]="{'active': tipList[2]==true}"  >
+              <input type="checkbox" name="options" id="option20" [(ngModel)]="tipList[2]" (change)="OtherAmount(20)"> AED 20
+            </label>
+            <label class="btn btn-primary dv_lbl_btn_tip_professional clickeddiv" [ngClass]="{'active':tipList[3]==true}"    [hidden]="IsOtherAmount">
+              
+              <input type="checkbox" name="options" id="option0"  for="tipAmt"  [(ngModel)]="tipList[3]" (change)="OtherAmount(0)">custom 
+            </label>
+          </div>
+          <!-- <input type="number" #test>-->
+          <div class="dv_custom_tip_input_wrap selected"   [hidden]="!IsOtherAmount">
+            <span>AED</span>
+            <input type="tel" maxlength="3"  appNumbersOnly   class="form-control dv_custom_tip_input" #tipAmt name="tipAmt" id="tipAmt"  (blur)="AddTip(tipAmt.value)" >
+            
+          </div>
+        </div>
+          <div class="round"  *ngIf="breakDownItem.tip>0">
+            <input type="checkbox" [(ngModel)]="chkFutureTip" id="checkbox" (change)="SaveTip()"  [attr.checked]="chkFutureTip ? '' : null" />
+            <label for="checkbox"></label>
+            <span style="font-size: 12px;">Add this tip automatically to future orders </span>
+          </div>
+          <div class="dv_100_tipto_pr">100% of the tip goes to the professional.</div>
+          <!-- <div  #target>
+         <span *ngIf="IsOtherAmount"> <input  type="number" appNumbersOnly  class="form-control dv_custom_tip_enter" #tipAmt (keyup)="AddTip(tipAmt.value)"  placeholder="Enter Amount" name=""></span></div> -->
+        </div>
+      </div>  
+  
+  
+    </div>
+    
+    <div class="dv_footer"  *ngIf="IsCartExist">
+      <div class="container">
+         <span class="datetimeslotsticky" *ngIf="SlotTime!='' && SlotDate!=''" >
+          <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="dv_location_sticky_icon"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><div class="dv_search_location_txt"><strong>{{SlotDate | date: 'dd MMM'}} </strong> <span>{{SlotTime=="00:00PM"?"12:00PM":SlotTime=="00:00AM"?"12:A0PM":SlotTime=="00:30PM"?"12:30PM":SlotTime=="00:30AM"?"12:30AM":SlotTime}} </span></div>
+  <svg data-toggle="modal" data-target="#dataandslot"   xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="dv_edit_sticky_icon"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg> </span>
+        <span  data-toggle="modal" data-target="#locationswitch"  class="homeaddresssticky" *ngIf="LocationAddress!=''">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="dv_location_sticky_icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> <div class="dv_search_location_txt"><strong>{{LocationName}} </strong> <span>{{LocationAddress}}</span></div>
+  <svg  data-toggle="modal" data-target="#locationswitch"   xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="dv_edit_sticky_icon"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg> </span>
+       
+  
+<!--Home Service Address-->
+<span  data-toggle="modal" data-target="#selectaddresss" class="homeaddresssticky" *ngIf="HomeAddress!=''">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="dv_location_sticky_icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> <div class="dv_search_location_txt"><strong>{{LocationName}} </strong> <span>{{HomeAddress}}</span></div>
+  <svg  data-toggle="modal" data-target="#locationswitch"   xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="dv_edit_sticky_icon"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg> </span>
+
+  <a *ngIf="IsLoggedIn"  href="javascript:void(0);"  (click)="Proceed()" class="dv_fullwidth_btn active">{{ProcessName}}</a>
+  
+  <a *ngIf="!IsLoggedIn"  data-toggle="modal" data-target="#mobilelogin" href="javascript:void(0);" class="dv_fullwidth_btn active">Login </a>
+  <div class="dv_terms_condition_fixed">
+    By proceeding, you agree to our <a href="#!">T&amp;C</a>, <a href="#!">Privacy</a> &amp; <a href="#!">Cancellation Policy</a>
+  </div>    
+</div>
+      <!-- <div class="container" >
+        <div *ngIf="TotalPrice==0" class="dv_btn_viewcart_loading d-block"><div class="dv_btn_view_loading"></div></div>
+      
+        <ul class="dv_footer_price">
+          <li *ngIf="TotalPrice!=0"> AED {{TotalPrice}} </li>
+        
+        </ul> 
+        <button  type="button" (click)="Proceed()" class="btn btn-default dv_goto_next">Next </button>
+       <p class="dv_footer_p" *ngIf="TotalService!=0">Total {{TotalService}}  serivces added in cart </p>
+      </div> -->
+    </div>
+  </div>
+  
+<div class="modal bottom fade areusuretxtmodal" id="mobilelogin" tabindex="-1" role="dialog" aria-labelledby="mobilelogin" style="z-index: 99999;" data-backdrop="static" data-keyboard="false">
+  <svg  *ngIf="!IsOTP" data-dismiss="modal" data-dismiss="modal" style="opacity:1; position: absolute; bottom: 320px; width: 35px; right: 15px; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.87 14.87"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:none;stroke:#565656;stroke-linecap:round;stroke-linejoin:round;stroke-width:.86px;}</style></defs><circle class="cls-1" cx="7.43" cy="7.43" r="7.43"></circle><g><line class="cls-2" x1="10.02" y1="4.85" x2="4.85" y2="10.02"></line><line class="cls-2" x1="4.85" y1="4.85" x2="10.02" y2="10.02"></line></g></svg>
+  <div *ngIf="!IsOTP" class="modal-dialog" role="document" style="height: 300px; border-radius: 25px 25px 0 0; overflow: hidden;">
+    <div class="modal-content dv_viewmobile_filter_content">
+      <div class="modal-header dv_modal_filter_sm_txt_header">
+        <h5 class="modal-title dv_modal_filter_sm_txt">Login/Sign up </h5> 
+        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <svg style="position: absolute; top: 15px; right: 15px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button> -->
+      </div>
+      <div class="modal-body overflow-auto" style="padding: 25px 15px 80px 15px !important;">
+        <div class="input-group mb-3">
+          <span class="input-group-addon dv_971_mobile_code" >+971</span>
+          <input type="tel" #mobileNo (keyup)="ValidMobile(mobileNo.value)" class="form-control dv_mobile_number_popup" placeholder="Enter mobile number">
+        </div>
+        <div class="round">
+            <input type="checkbox" checked id="checkbox" />
+            <label for="checkbox"></label>
+            Get order updates on WhatsApp
+          </div>
+      </div>
+      <div class="modal-footer modal-footer-fixed view_continue_above_modal">
+        <a href="javascript:void(0);"   [ngClass]="{'active':IsValidNo,'user-select-none':!IsValidNo,'height-50':IsOTPProceed}"  (click)="SendSMS(mobileNo.value)" class="dv_fullwidth_btn"><div *ngIf="IsOTPProceed"  class="buttonloader"><div></div><div></div><div></div><div></div></div><div *ngIf="!IsOTPProceed">Proceed</div> </a> <!-- active -->
+      </div>
+    </div>
+  </div>
+  <svg  *ngIf="IsOTP" (click)="clearIsOTP()" data-dismiss="modal" data-dismiss="modal" style="opacity:1; position: absolute; bottom: 350px; width: 35px; right: 15px; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.87 14.87"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:none;stroke:#565656;stroke-linecap:round;stroke-linejoin:round;stroke-width:.86px;}</style></defs><circle class="cls-1" cx="7.43" cy="7.43" r="7.43"></circle><g><line class="cls-2" x1="10.02" y1="4.85" x2="4.85" y2="10.02"></line><line class="cls-2" x1="4.85" y1="4.85" x2="10.02" y2="10.02"></line></g></svg>
+ 
+  <div *ngIf="IsOTP"  class="modal-dialog" role="document" style="height: 320px; border-radius: 15px 25px 0 0; overflow: hidden;">
+    <svg (click)="clearIsOTP()" data-dismiss="modal" data-dismiss="modal" style="opacity:1; position: absolute; bottom: 420px; width: 35px; right: 15px; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.87 14.87"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:none;stroke:#565656;stroke-linecap:round;stroke-linejoin:round;stroke-width:.86px;}</style></defs><circle class="cls-1" cx="7.43" cy="7.43" r="7.43"></circle><g><line class="cls-2" x1="10.02" y1="4.85" x2="4.85" y2="10.02"></line><line class="cls-2" x1="4.85" y1="4.85" x2="10.02" y2="10.02"></line></g></svg>
+    <div class="modal-content dv_viewmobile_filter_content">
+      <div class="modal-header dv_modal_filter_sm_txt_header">
+        <h5 class="modal-title dv_modal_filter_sm_txt">Verification Code </h5> 
+        <button hidden type="button" #btnClose class="close" data-dismiss="modal" aria-label="Close">
+          <svg style="position: absolute; top: 15px; right: 15px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button> 
+      </div>
+      <div class="modal-body overflow-auto" style="padding: 25px 15px 80px 15px !important;">
+        
+        <div class="row">
+          <div class="col-md-8 col-sm-8 col-xs-8 col-8">
+            <div class="dv_wehave_sent_txt">we have sent you 4 digit code on {{otpDetail.mobile}}</div>
+          </div>
+          <div class="col-md-4 col-sm-4 col-xs-4 col-4">
+            <a class="dv_edit_contact_a_popup" href="javascript:void(0);" (click)="EditNo()">edit number </a>
+          </div>
+        </div>
+        <div class="dv_4digit_code_inputs mb-2">
+          <!-- <input type="tel" name="" class="form-control dv_verification_code">
+          <input type="tel" name="" class="form-control dv_verification_code">
+          <input type="tel" name="" class="form-control dv_verification_code">
+          <input type="tel" name="" class="form-control dv_verification_code"> -->
+          <ng-otp-input  class=" dv_verification_code"  (onInputChange)="login($event)"  [config]="{length:4,allowNumbersOnly:true}"></ng-otp-input>
+        </div>
+        <strong  *ngIf="!IsResendOTP" class="dv_remain_count">00:{{this.timeLeft}} </strong>
+        <strong   *ngIf="IsResendOTP" class="dv_remain_count">    <a href="javascript:void(0)" style=" font-family: 'OpenSauceOneBold'; " (click)="ResendOTP()">Resend</a> </strong>
+
+      </div>
+      <div class="modal-footer modal-footer-fixed view_continue_above_modal">
+        <a href="javascript:void(0);" class="dv_fullwidth_btn" [ngClass]="{'height-50 active':IsOTPLogin}"><div *ngIf="IsOTPLogin"  class="buttonloader"><div></div><div></div><div></div><div></div></div><div *ngIf="!IsOTPLogin">Login</div> </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal bottom fade areusuretxtmodal" id="couponsoffers" tabindex="-1" role="dialog" aria-labelledby="couponsoffers" style="z-index: 99999;" data-backdrop="static" data-keyboard="false">
+  <svg data-dismiss="modal" data-dismiss="modal" style="opacity:1; position: absolute; top: 20%; width: 35px; right: 15px; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.87 14.87"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:none;stroke:#565656;stroke-linecap:round;stroke-linejoin:round;stroke-width:.86px;}</style></defs><circle class="cls-1" cx="7.43" cy="7.43" r="7.43"></circle><g><line class="cls-2" x1="10.02" y1="4.85" x2="4.85" y2="10.02"></line><line class="cls-2" x1="4.85" y1="4.85" x2="10.02" y2="10.02"></line></g></svg>
+  <div class="modal-dialog" role="document" style="height: 70%; border-radius: 15px 25px 0 0; overflow: hidden;">
+    <div class="modal-content dv_viewmobile_filter_content">
+      <div class="modal-header dv_modal_filter_sm_txt_header">
+        <h5 class="modal-title dv_modal_filter_sm_txt">Coupons & Offers </h5> 
+       <button hidden type="button"  #btnCloseCoupon class="close" data-dismiss="modal" aria-label="Close">
+          <svg style="position: absolute; top: 15px; right: 15px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button> 
+      </div>
+      <div class="modal-body overflow-auto" style="padding: 25px 15px !important;">
+        
+        <div class="dv_input_enter_code_apply">
+          <input type="text" #CouponCode class="form-control dv_input_code_apply" placeholder="Enter coupon code" name="">
+          <span class="active" (click)="ValidCoupon(CouponCode.value,false)">apply</span> <!-- active -->
+        </div>
+        <div class="dv_festive_coupons mb-3" *ngFor="let item of CouponCountList; index as i">
+          <div class="dv_festive_coupons_list">
+            <span>mbl</span>
+            <div class="dv_festive_coupons_data">
+              <div class="dv_festive_coupons_offers">{{item.voucher_item}} </div>
+              <div class="dv_festive_coupons_upto">10% OFF up to {{item.amount}} AED </div>
+              <div class="dv_festive_coupons_save_aed">save AED {{item.amount}} on this order </div>
+              <div class="dv_festive_coupons_conditions"  data-toggle="modal" data-target="#coupontermsconditions">View T&C </div>              
+              <a href="javascrip:void(0);"  (click)="ValidCoupon(item.voucher_code,false)">apply</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal bottom fade areusuretxtmodal" id="couponnoexist" tabindex="-1" role="dialog" aria-labelledby="couponnoexist" style="z-index: 99999;" data-backdrop="static" data-keyboard="false">
+  <svg data-dismiss="modal" data-dismiss="modal" style="opacity:1; position: absolute; bottom : 270px; width: 35px; right: 15px; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.87 14.87"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:none;stroke:#565656;stroke-linecap:round;stroke-linejoin:round;stroke-width:.86px;}</style></defs><circle class="cls-1" cx="7.43" cy="7.43" r="7.43"></circle><g><line class="cls-2" x1="10.02" y1="4.85" x2="4.85" y2="10.02"></line><line class="cls-2" x1="4.85" y1="4.85" x2="10.02" y2="10.02"></line></g></svg>
+  <div class="modal-dialog" role="document" style="height: 250px; border-radius: 15px 25px 0 0; overflow: hidden;">
+    <div class="modal-content dv_viewmobile_filter_content">
+      <div class="modal-header dv_modal_filter_sm_txt_header">
+        <h5 class="modal-title dv_modal_filter_sm_txt">Coupon </h5> 
+        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <svg style="position: absolute; top: 15px; right: 15px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button> -->
+      </div>
+      <div class="modal-body overflow-auto" style="padding: 15px !important;">
+        <div class="dv_coupon_noexist_wrap">
+          <img src="./assets/img/couponnoexist.png" class="dv_coupon_noexist">
+          <span><strong>{{CouponCode.value}}</strong>- Coupon doesn't exist</span>
+        </div>
+      </div>
+      <div class="modal-footer modal-footer-fixed view_continue_above_modal">
+        <a href="javascript:void(0);" data-dismiss="modal" class="dv_fullwidth_btn active">Okay got it </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal bottom fade areusuretxtmodal" id="invalidotp" tabindex="-1" role="dialog" aria-labelledby="invalidotp" style="z-index: 99999;" data-backdrop="static" data-keyboard="false">
+  <svg data-dismiss="modal"  (click)="clearOTP()"  data-dismiss="modal" style="opacity:1;z-index:1; position: absolute; bottom : 270px; width: 35px; right: 15px; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.87 14.87"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:none;stroke:#565656;stroke-linecap:round;stroke-linejoin:round;stroke-width:.86px;}</style></defs><circle class="cls-1" cx="7.43" cy="7.43" r="7.43"></circle><g><line class="cls-2" x1="10.02" y1="4.85" x2="4.85" y2="10.02"></line><line class="cls-2" x1="4.85" y1="4.85" x2="10.02" y2="10.02"></line></g></svg>
+  <div class="modal-dialog" role="document" style="height: 250px;z-index:1; border-radius: 15px 25px 0 0; overflow: hidden;">
+    <div class="modal-content dv_viewmobile_filter_content">
+      <div class="modal-header dv_modal_filter_sm_txt_header">
+        <h5 class="modal-title dv_modal_filter_sm_txt">In valid OTP </h5> 
+        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <svg style="position: absolute; top: 15px; right: 15px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button> -->
+      </div>
+      <div class="modal-body overflow-auto" style="padding: 15px !important;">
+       
+         <div class="dv_coupon_noexist_wrap">
+          <img src="./assets/img/wrong-otp.png" class="dv_coupon_noexist">
+          <span>In valid OTP</span>
+        </div>
+      </div>
+      <div class="modal-footer modal-footer-fixed view_continue_above_modal">
+        <a href="javascript:void(0);" data-dismiss="modal" (click)="clearOTP()" class="dv_fullwidth_btn active">Okay got it </a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal bottom fade areusuretxtmodal" id="couponnyousave" tabindex="-1" role="dialog" aria-labelledby="couponnyousave" style="z-index: 99999;" data-backdrop="static" data-keyboard="false">
+  <svg data-dismiss="modal" data-dismiss="modal" style="opacity:1; position: absolute; bottom: 320px; width: 35px; right: 15px; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.87 14.87"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:none;stroke:#565656;stroke-linecap:round;stroke-linejoin:round;stroke-width:.86px;}</style></defs><circle class="cls-1" cx="7.43" cy="7.43" r="7.43"></circle><g><line class="cls-2" x1="10.02" y1="4.85" x2="4.85" y2="10.02"></line><line class="cls-2" x1="4.85" y1="4.85" x2="10.02" y2="10.02"></line></g></svg>
+  <div class="modal-dialog" role="document" style="height: 300px; border-radius: 15px 25px 0 0; overflow: hidden;">
+    <div class="modal-content dv_viewmobile_filter_content">
+      <div class="modal-header dv_modal_filter_sm_txt_header">
+        <h5 class="modal-title dv_modal_filter_sm_txt">Congratulations </h5> 
+        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <svg style="position: absolute; top: 15px; right: 15px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button> -->
+      </div>
+      <div class="modal-body overflow-auto" style="padding: 15px !important;">
+        <div class="dv_coupon_noexist_wrap">
+          <img src="./assets/img/couponnoexist.png" class="dv_coupon_noexist">
+          <div class="dv_yousave_aed_txt">yeah.! you save <span>AED {{breakDownItem.offer}}</span> on this order </div>
+          <span><strong>{{ValidCouponCode}}</strong>- Applied successfully</span>
+        </div>
+      </div>
+      <div class="modal-footer modal-footer-fixed view_continue_above_modal">
+        <a href="javascript:void(0);" data-dismiss="modal" class="dv_fullwidth_btn active">Okay got it </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal bottom fade areusuretxtmodal" id="coupontermsconditions" tabindex="-1" role="dialog" aria-labelledby="coupontermsconditions" style="z-index: 99999;" data-backdrop="static" data-keyboard="false">
+  <svg data-dismiss="modal" data-dismiss="modal" style="opacity:1; z-index:1; position: absolute; bottom: 420px; width: 35px; right: 15px; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.87 14.87"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:none;stroke:#565656;stroke-linecap:round;stroke-linejoin:round;stroke-width:.86px;}</style></defs><circle class="cls-1" cx="7.43" cy="7.43" r="7.43"></circle><g><line class="cls-2" x1="10.02" y1="4.85" x2="4.85" y2="10.02"></line><line class="cls-2" x1="4.85" y1="4.85" x2="10.02" y2="10.02"></line></g></svg>
+ <div class="modal-dialog" role="document" style="z-index: 1; height: 400px; border-radius: 15px 25px 0 0; overflow: hidden;">
+    <div class="modal-content dv_viewmobile_filter_content">
+      <div class="modal-header dv_modal_filter_sm_txt_header">
+        <h5 class="modal-title dv_modal_filter_sm_txt">Terms & Conditions </h5> 
+        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <svg style="position: absolute; top: 15px; right: 15px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button> -->
+      </div>
+      <div class="modal-body overflow-auto" style="padding: 15px !important;">
+        <ul class="coupontermsconditions">
+          <li>Terms And Conditions</li>
+          <li>4% off on Online Payment</li>
+          <li>Applicable on minimum order value of AED 99 with minimum assured discount of AED 10</li>
+          <li>Applicable once per user </li>
+          <li>Eligible cashback amount and details will reflect in the user's account </li>
+        </ul>
+      </div>
+      <div class="modal-footer modal-footer-fixed view_continue_above_modal">
+        <a href="javascript:void(0);" class="dv_fullwidth_btn active" data-dismiss="modal">Okay got it </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal bottom fade" id="selectaddresss" tabindex="-1" role="dialog" aria-labelledby="selectaddresss" style="z-index: 99999;">
+  <svg data-dismiss="modal" data-dismiss="modal" style="opacity:1; position: absolute; top: 35px; width: 35px; right: 15px; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.87 14.87"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:none;stroke:#565656;stroke-linecap:round;stroke-linejoin:round;stroke-width:.86px;}</style></defs><circle class="cls-1" cx="7.43" cy="7.43" r="7.43"></circle><g><line class="cls-2" x1="10.02" y1="4.85" x2="4.85" y2="10.02"></line><line class="cls-2" x1="4.85" y1="4.85" x2="10.02" y2="10.02"></line></g></svg>
+  <button hidden type="button" #btnCloseSelectaddresss class="close" data-dismiss="modal" aria-label="Close"></button>
+  <div class="modal-dialog dv_modal_top_hr" role="document" style="border-radius: 25px 25px 0 0; overflow: hidden;">
+    <div class="modal-content dv_viewmobile_filter_content">
+      <div class="modal-header dv_modal_filter_sm_txt_header">
+        <h5 class="modal-title dv_modal_filter_sm_txt">Saved address </h5>
+        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <svg style="position: absolute; top: 15px; right: 15px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button> -->
+      </div>
+      <div class="modal-body overflow-auto" style="padding: 0 0 80px 0 !important;">
+        <div class="dv_subscategory_wrapper">
+          <div class="container">
+            <!-- <h4 class="dv_subscategory_heading">Total 4 saved address </h4> -->
+            <a href="javascript:void(0)"  data-dismiss="modal" (click)="AddNewAddress()"  class="dv_add_another_address"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg> add another address </a>
+         
+     <app-popup-add-address [someInput]="addressId" (IsEdit)='IsEdit($event)' (IsDelete)='IsDelete($event)' (DefaultAddress)='selectAddressCount($event)'></app-popup-add-address>
+
+    </div>
+  </div>
+        <hr class="dv_bottom_space p-t-3" />
+
+      </div>
+      <div class="modal-footer modal-footer-fixed view_continue_above_modal">
+        <a href="javascript:void(0);" (click)="AddressContinue()" [ngClass]="{'active':addressId>0}" class="dv_fullwidth_btn  height-50">Continue </a> <!---->
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal bottom fade" id="addnewaddressmap" tabindex="-1" role="dialog" aria-labelledby="addnewaddressmap" style="z-index: 99999;">
+  <svg data-dismiss="modal" data-dismiss="modal" style="opacity:1; position: absolute; top: 35px; width: 35px; right: 15px; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.87 14.87"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:none;stroke:#565656;stroke-linecap:round;stroke-linejoin:round;stroke-width:.86px;}</style></defs><circle class="cls-1" cx="7.43" cy="7.43" r="7.43"></circle><g><line class="cls-2" x1="10.02" y1="4.85" x2="4.85" y2="10.02"></line><line class="cls-2" x1="4.85" y1="4.85" x2="10.02" y2="10.02"></line></g></svg>
+  <button hidden type="button" #btnCloseSaveAddress class="close" data-dismiss="modal" aria-label="Close"></button>
+  <div class="modal-dialog dv_modal_top_hr" role="document" style="border-radius: 25px 25px 0 0; overflow: hidden;">
+    <div class="modal-content dv_viewmobile_filter_content">
+      <div class="modal-body overflow-auto" style="padding: 0 0 40px 0 !important;">
+       <app-popup-save-address  [someInput]="EditaddressId"  (getReload)='GetAddressList($event)'></app-popup-save-address>
+        <hr class="dv_bottom_space p-t-3" />
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="modal bottom fade" id="dataandslot" tabindex="-1" role="dialog" aria-labelledby="dataandslot" style="z-index: 99999;">
+  <svg data-dismiss="modal" data-dismiss="modal" style="opacity:1; position: absolute; top: 35px; width: 35px; right: 15px; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.87 14.87"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:none;stroke:#565656;stroke-linecap:round;stroke-linejoin:round;stroke-width:.86px;}</style></defs><circle class="cls-1" cx="7.43" cy="7.43" r="7.43"></circle><g><line class="cls-2" x1="10.02" y1="4.85" x2="4.85" y2="10.02"></line><line class="cls-2" x1="4.85" y1="4.85" x2="10.02" y2="10.02"></line></g></svg>
+  <button hidden type="button" #btnCloseDateSlot class="close" data-dismiss="modal" aria-label="Close"></button>
+  <div class="modal-dialog dv_modal_top_hr" role="document" style="border-radius: 25px 25px 0 0; overflow: hidden;">
+    <div class="modal-content dv_viewmobile_filter_content">
+      <div class="modal-header dv_modal_filter_sm_txt_header">
+        <span  data-toggle="modal" data-target="#locationswitch" class="homeaddresssticky" style="top: 0;background: #ffffff;z-index: 1;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="dv_location_sticky_icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg><div class="dv_search_location_txt"><strong>{{LocationName}} </strong> <span>{{LocationAddress}}</span></div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="dv_edit_sticky_icon"><polyline points="9 18 15 12 9 6"></polyline></svg></span>
+        <!-- <h5 class="modal-title dv_modal_filter_sm_txt">Date & Slot </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <svg style="position: absolute; top: 15px; right: 15px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button> -->
+      </div>
+      <div class="modal-body" style="padding: 30px 0 80px 0 !important; overflow-x: hidden;">
+     <app-popup-date-slot  (editedEvent)="eventHandler($event)"></app-popup-date-slot>
+
+    
+
+      </div>
+
+    </div>
+  </div>
+</div>
+ 
+<div class="modal bottom fade"   data-keyboard="false" data-backdrop="static" id="locationmodal" tabindex="-1" role="dialog" aria-labelledby="locationmodal" style="z-index: 99999;">
+  <svg data-dismiss="modal"  data-dismiss="modal" style="opacity:1; position: absolute; top: 35px; width: 35px; right: 15px; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.87 14.87"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:none;stroke:#565656;stroke-linecap:round;stroke-linejoin:round;stroke-width:.86px;}</style></defs><circle class="cls-1" cx="7.43" cy="7.43" r="7.43"></circle><g><line class="cls-2" x1="10.02" y1="4.85" x2="4.85" y2="10.02"></line><line class="cls-2" x1="4.85" y1="4.85" x2="10.02" y2="10.02"></line></g></svg>
+  <div class="modal-dialog" role="document" style="border-radius: 25px 25px 0 0; overflow: hidden;">
+    <div class="modal-content dv_viewmobile_filter_content">
+      <!-- <div class="modal-header dv_modal_filter_sm_txt_header">
+        <h5 class="modal-title dv_modal_filter_sm_txt">{{optionCount}} options </h5>
+         <button type="button" class="close" data-dismiss="modal" (click)="UpdateOption(optionList[0].sub_category_id)"  aria-label="Close">
+          <svg style="position: absolute; top: 15px; right: 15px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button> 
+      </div> -->
+      <div class="modal-body overflow-auto" style="padding: 0 0 80px 0 !important;">
+        <img src="./assets/img/African Braid.jpg" class="w-100 mb-4">
+      <div class="container">
+        <h5 class="modal-title dv_modal_filter_sm_txt">Location</h5>        
+      </div>
+        <div class="dv_option_services">
+          <div *ngFor="let item of locationList; index as i">
+          
+          <hr class="dv_divider">
+        </div>
+      </div>
+      </div>
+    
+    </div>
+  </div>
+</div>
+
+
+<div class="modal bottom fade" id="locationswitch" tabindex="-1" role="dialog" aria-labelledby="locationswitch" style="z-index: 99999;">
+  <svg data-dismiss="modal" style="transition-delay: 5s !important; position: absolute; top: 8%; width: 30px; right: 15px; z-index:1; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.87 14.87"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:none;stroke:#565656;stroke-linecap:round;stroke-linejoin:round;stroke-width:.86px;}</style></defs><circle class="cls-1" cx="7.43" cy="7.43" r="7.43"/><g><line class="cls-2" x1="10.02" y1="4.85" x2="4.85" y2="10.02"/><line class="cls-2" x1="4.85" y1="4.85" x2="10.02" y2="10.02"/></g></svg>
+  <div class="modal-dialog" role="document" style="border-radius: 25px 25px 0 0; overflow: hidden; z-index:1;">
+    <div class="modal-content dv_viewmobile_filter_content">
+      <div class="modal-header dv_modal_filter_sm_txt_header">
+        <h5 class="modal-title dv_modal_filter_sm_txt">Switch Locations </h5>
+       <button type="button" hidden #btnCloseLocation class="close" data-dismiss="modal" aria-label="Close">
+          <svg style="position: absolute; top: 15px; right: 15px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button> 
+      </div>
+      <div class="modal-body overflow-auto" style="padding: 0 0 80px 0 !important;">
+        <ul class="locationswitch">
+          <li *ngFor="let item of locationList; index as i"><a href="javascript:void(0)" (click)="SelectedLocation(item.id)">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>{{item.location_name}}<span>{{item.address}}</span>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+           </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal bottom fade areusuretxtmodal" id="locationunavailable" tabindex="-1" role="dialog" aria-labelledby="locationunavailable" style="z-index: 99999;">
+  <svg data-dismiss="modal" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.87 14.87" style="opacity: 1; position: absolute; bottom: 360px; width: 35px; right: 15px;"><circle cx="7.43" cy="7.43" r="7.43" style="fill:#fff;"></circle><g><line x1="10.02" y1="4.85" x2="4.85" y2="10.02" style="fill:none;stroke:#565656;stroke-linecap:round;stroke-linejoin:round;stroke-width:.86px;"></line><line x1="4.85" y1="4.85" x2="10.02" y2="10.02" style="fill:none;stroke:#565656;stroke-linecap:round;stroke-linejoin:round;stroke-width:.86px;"></line></g></svg>
+  <div class="modal-dialog" role="document" style="height: 340px; border-radius: 25px 25px 0 0; overflow: hidden;">
+    <div class="modal-content dv_viewmobile_filter_content">
+      <div class="modal-header dv_modal_filter_sm_txt_header">
+        <h5 class="modal-title dv_modal_filter_sm_txt">Alert </h5> 
+          
+      </div>
+      <div class="modal-body overflow-auto" style="padding: 15px 15px 80px 15px !important;">
+        <h4 class="dv_alert_heading_location" *ngIf="IsServiceAvb">A few services are not available </h4>
+        <p class="dv_alert_heading_location_p"  *ngIf="IsServiceAvb">below mention services are not available to new location </p>
+        <h4 class="dv_alert_heading_location"  *ngIf="DiffPrice!=0">Price update </h4>
+        <p class="dv_alert_heading_location_p" *ngIf="DiffPrice!=0">Price of few items in your cart have been updated. New amount is <strong>AED {{DiffPrice}} </strong></p>
+     
+      </div>
+      <div class="modal-footer modal-footer-fixed view_continue_above_modal" >
+        <a href="javascript:void(0);" (click)="GotIt()"  data-dismiss="modal" class="dv_okaygotit_btn">Okay Got it </a>
+      </div>
+    </div>
+  </div>
+</div>
+<button #btnLocation hidden  data-toggle="modal"  data-target="#filter"></button> 
+<button #btnPrice hidden   data-toggle="modal"  data-target="#locationunavailable" ></button> 
+<div class="loaderwrapper" *ngIf="IsLoading"><div class="pageloader"><div></div><div></div><div></div><div></div></div></div>
+
+<div class="modal bottom fade areusuretxtmodal" id="areyousure" tabindex="-1" role="dialog" aria-labelledby="areyousure" style="z-index: 99999;" data-backdrop="static" data-keyboard="false">
+  <svg data-dismiss="modal" style="position: absolute;bottom: 322px;right: 15px;background: #ffffff;border-radius: 50%;padding: 5px;width: 35px;height: 35px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+  <div class="modal-dialog" role="document" style="z-index: 1; height: 300px; border-radius: 25px 25px 0 0; overflow: hidden;">
+    <div class="modal-content dv_viewmobile_filter_content">
+      <div class="modal-header dv_modal_filter_sm_txt_header">
+        <h5 class="modal-title dv_modal_filter_sm_txt">Delete Address </h5>
+      </div>
+      <div class="modal-body overflow-auto" style="padding: 25px 15px 80px 15px !important;">
+        <svg style=" width: 50px; margin: 0 auto 15px auto; display: block; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82.54 82.54"><circle style="fill:#ffebeb;" cx="41.27" cy="41.27" r="41.27"/><g><polyline style="fill:none;stroke:red;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.65px;" points="26.52 31.44 29.8 31.44 56.01 31.44"/><path style="fill:none;stroke:red;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.65px;" d="M52.74,31.44v22.94c0,1.81-1.47,3.28-3.28,3.28h-16.38c-1.81,0-3.28-1.47-3.28-3.28V31.44m4.91,0v-3.28c0-1.81,1.47-3.28,3.28-3.28h6.55c1.81,0,3.28,1.47,3.28,3.28v3.28"/><line style="fill:none;stroke:red;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.65px;" x1="37.99" y1="39.63" x2="37.99" y2="49.46"/><line style="fill:none;stroke:red;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.65px;" x1="44.54" y1="39.63" x2="44.54" y2="49.46"/></g></svg> <h3 style="text-align: center; font-family: 'OpenSauceOneBold'; font-size: 14px; margin: 0 0 10px 0; ">are you sure you want to delete address ? </h3>
+        <p style="text-align: center; font-family: 'OpenSauceOneRegular'; font-size: 12px; margin: 0 0 10px 0; ">{{HomeAddress}} </p>
+      </div>
+      <div class="modal-footer modal-footer-fixed view_continue_above_modal">
+        <a href="javascript:void(0);"  data-dismiss="modal"  class="dv_fullwidth_btn height-50" style=" width: 45%; display: inline-block; float: left; margin: 0 15px 0 0; color: #999999; ">Cancel </a> <!-- active -->
+        <a href="javascript:void(0);"  data-dismiss="modal"  (click)="DeleteAddress()"  class="dv_fullwidth_btn active height-50" style=" width: 47%; display: inline-block; float: right;">Yes Delete </a>
+      </div>
+    </div>
+  </div>
+</div>
+  

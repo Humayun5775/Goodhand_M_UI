@@ -1,0 +1,117 @@
+<div class="dv_header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-sm-8 col-xs-8 col-8">
+        <div class="dv_salon_type_locations">
+          <strong data-toggle="modal" data-target="#selectaddresss">m</strong>
+          <div class="dv_salon_type_locations_txt" (click)="GetLocation()"  data-toggle="modal"  data-target="#filter">
+             {{serviceType}} <span>{{locationName}}</span>
+             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-4 col-xs-4 col-4">
+        <div class="dv_icons_right">
+           <svg  data-toggle="modal" data-target="#openmenu"  style="cursor:pointer;" style="cursor:pointer;"  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          <svg  (click)="loggedIn()" style="cursor:pointer;" style="cursor:pointer;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>            
+          <svg  (click)="home()" style="cursor:pointer;" style="cursor:pointer;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        </div>
+      </div>
+      <div class="dv_page_heading" [ngClass] = "{'text-center': IsBackButton==false}">
+        <span style="cursor:pointer;" *ngIf="IsBackButton"><svg backButton xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg> {{Title}}</span>
+        <span style="cursor:pointer;"  *ngIf="!IsBackButton">{{Title}}</span>
+          <svg *ngIf="IsSearch" (click)="search()" style="cursor:pointer;"  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+
+        </div> 
+    </div>
+  </div>
+  
+</div>
+
+<div class="modal bottom fade"  data-keyboard="false" data-backdrop="static" id="filter" tabindex="-1" role="dialog" aria-labelledby="filter" style="z-index: 99999;">
+  <div class="modal-dialog" role="document" style="border-radius: 25px 25px 0 0; overflow: hidden;">
+    <div class="modal-content dv_viewmobile_filter_content">
+      <div class="modal-header dv_modal_filter_sm_txt_header">
+        <h5 class="modal-title dv_modal_filter_sm_txt">Change Location </h5>
+        <button type="button" class="close" (click)="Close()" data-dismiss="modal" aria-label="Close">
+          <svg style="position: absolute; top: 15px; right: 15px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <div class="modal-body overflow-auto" style="padding: 0 0 80px 0 !important;">
+        <div class="dv_subscategory_wrapper">
+          <div *ngFor="let item of locationList; index as i">
+          <div class="container">
+            <div class="dv_branches_location_list">
+              <img src="https://www.mirrorsbeautylounge.com/mirror-admin/public/images/contact-us/{{item.image}}">
+              <h4>{{item.location_name}}</h4>
+              <p>{{item.address}} </p>
+              <span>Timings : <strong>Everyday - {{item.start_time}} to {{item.end_time}}</strong></span>
+              <ul>
+                <li><a href="tel:{{item.whats_app}}">{{item.whats_app}}</a></li>
+                <li><a href="tel:{{item.phone}}">{{item.phone}}</a></li>
+              </ul>
+              <ul class="dv_explore_book">
+                <li><button type="button" class="btn btn-default dv_explore_location" >explore </button></li>
+                <li><button type="button" (click)="SelectedLocation(item.id)" id="locationunavailable{{item.id}}" data-dismiss="modal" class="btn btn-default dv_bookappointment_2loc">book appointment </button></li>
+              </ul>
+            </div>
+          </div>
+          <hr class="dv_bottom_space p-t-3" />
+        </div>
+        </div>
+        <p class="ml-3 mt-3 dv_sm_para">Prices will change if you will switch the branch location </p>
+      </div>
+      <!-- <div class="modal-footer modal-footer-fixed">
+        <button type="button" class="btn btn-primary dv_apply_filter_btn">Confirm </button>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+<div class="modal bottom fade areusuretxtmodal" id="locationunavailable" tabindex="-1" role="dialog" aria-labelledby="locationunavailable" style="z-index: 99999;">
+  <div class="modal-dialog" role="document" style="height: 340px; border-radius: 25px 25px 0 0; overflow: hidden;">
+    <div class="modal-content dv_viewmobile_filter_content">
+      <div class="modal-header dv_modal_filter_sm_txt_header">
+        <h5 class="modal-title dv_modal_filter_sm_txt">Alert </h5> 
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <svg style="position: absolute; top: 15px; right: 15px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <div class="modal-body overflow-auto" style="padding: 15px 15px 80px 15px !important;">
+        <h4 class="dv_alert_heading_location" *ngIf="IsServiceAvb">A few services are not available </h4>
+        <p class="dv_alert_heading_location_p"  *ngIf="IsServiceAvb">below mention services are not available to new location </p>
+        <h4 class="dv_alert_heading_location"  *ngIf="DiffPrice!=0">Price update </h4>
+        <p class="dv_alert_heading_location_p" *ngIf="DiffPrice!=0">Price of few items in your cart have been updated. New amount is <strong>AED {{DiffPrice}} </strong></p>
+     
+      </div>
+      <div class="modal-footer modal-footer-fixed view_continue_above_modal" >
+        <a href="javascript:void(0);" (click)="GotIt()"  data-dismiss="modal" class="dv_okaygotit_btn">Okay Got it </a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal bottom fade" id="openmenu" tabindex="-1" role="dialog" aria-labelledby="openmenu" style="z-index: 99999;">
+  <div class="modal-dialog dv_modal_top_hr" role="document" style="border-radius: 25px 25px 0 0; overflow: hidden;">
+    <div class="modal-content dv_viewmobile_filter_content">
+      <div class="modal-header dv_modal_filter_sm_txt_header">
+        <h5 class="modal-title dv_modal_filter_sm_txt">Account </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <svg style="position: absolute; top: 15px; right: 15px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <div class="modal-body overflow-auto" style="padding: 0 15px 80px 15px !important;">
+        <ul class="dv_ac_menu_bottom" *ngIf="IsLogin">
+          <li><a routerLink="profile" data-dismiss="modal" >Profile </a></li>
+          <li><a routerLink="my-booking" data-dismiss="modal" >My Bookings </a></li>
+          <li><a href="javascript:void(0);" (click)="loggedOut()" data-dismiss="modal" >Logout </a></li>
+        </ul>
+        <ul class="dv_ac_menu_bottom" *ngIf="!IsLogin">
+          <li><a  href="javascript:void(0);" routerLink="enter-mobile" data-dismiss="modal" >Login </a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<button #btnLocation hidden  data-toggle="modal"  data-target="#filter"></button> 
+<button #btnPrice hidden   data-toggle="modal"  data-target="#locationunavailable" ></button> 
+            

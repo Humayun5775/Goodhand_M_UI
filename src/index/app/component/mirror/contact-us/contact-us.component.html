@@ -1,0 +1,35 @@
+<div class="dv_header dv_diffrent_header h-auto border-bottom-0 pt-0" >
+    <div class="container">
+      <div class="row">
+        <div class="dv_page_heading border-top-0 border-bottom mt-0 dv_height_search">
+            <span backButton>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg> Contact us
+            </span>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="dv_sub_category_page">
+    <div class="container pt-4">
+      <div class="col-md-12 text-center">
+        <h4 style=" font-size: 24px; font-family: 'OpenSauceOneBold'; text-transform: capitalize; margin: 0 0 30px 0; ">contact us </h4>
+        <p class="font-14">If you have any concerns related to your Booking and service, you can contact us through <a routerLink="/help">Help Center</a> just by logging into your profile.</p>
+        <p class="font-16 bold" style=" font-family: 'OpenSauceOnebold'; font-size: 20px; ">Our Vision is to Deliver Professional Quality Service like never before to all our Beloved Customers. </p>
+      </div>
+    </div>
+    <div class="container pt-4">
+      <div class="row">
+        <div class="col-md-4 mb-4" *ngFor="let item of locationList; index as i">
+            <div class="card text-center p-3 font-14" style="height: 250px;">
+            <h4 style="font-size: 18px;font-family: 'OpenSauceOneBold';text-transform: capitalize;margin: 0 0 10px 0;border-bottom: 1px solid #ebebeb;padding: 0 0 10px 0;">{{item.location_name}}</h4>
+            <address class="mb-0">{{item.address}}</address>
+            <ul class="dv_contact_whatsapp_list">
+              <li><a  href="tel:{{item.phone}}"><img src="https://cdn-icons-png.flaticon.com/512/724/724664.png"> {{item.phone}}</a></li>
+              <li><a  href="https://api.whatsapp.com/send/?phone={{item.whats_app}}&amp;text&amp;app_absent=0" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"> {{item.whats_app}}</a></li>
+            </ul>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+  </div>

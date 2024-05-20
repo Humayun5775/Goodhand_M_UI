@@ -1,0 +1,81 @@
+<div class="dv_wrapper">
+    <div class="dv_header dv_diffrent_header h-auto border-bottom-0 pt-0" data-toggle="modal" data-target="#servicereview">
+      <div class="container dv_desktop_sm_width">
+        <div class="row">
+          <div class="dv_page_heading border-top-0 border-bottom mt-0 dv_height_search">
+            <span style="cursor: pointer;" backButton>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg> Credit Wallet
+              </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="dv_sub_category_page">
+      <div class="container dv_desktop_sm_width">
+        <img src="assets/img/mirrors-wallet.jpg" class="w-100">
+        <p class="dv_cr_wallet">credit in wallet <strong>AED {{this.totalAmt>0?this.totalAmt:0}}</strong></p>
+        <ul class="dv_setting_ul"  *ngIf="loading" >
+          <li>
+            <div class="container pl-0 dv_desktop_sm_width" >
+              <div style="position:relative; padding: 15px 0 0 0;  height: auto;">
+                <ngx-skeleton-loader [theme]="{ height: '100px', position:'absolute', left: '0', width : '100px', float: 'left', margin: '0 15px 10px 0'}" appearance="line"></ngx-skeleton-loader>
+                <div class="dv_right_sketon_head_para" style="padding: 0 0 0 120px;">
+                  <ngx-skeleton-loader [theme]="{ height: '20px', width : '60%', margin: '0 0 5px 0'}" appearance="line"></ngx-skeleton-loader>
+                <ngx-skeleton-loader [theme]="{ height: '10px', width : '100%', margin: '0 0 5px 0'}" appearance="line"></ngx-skeleton-loader>
+                <ngx-skeleton-loader [theme]="{ height: '10px', width : '100%', margin: '0 0 5px 0'}" appearance="line"></ngx-skeleton-loader>
+                <ngx-skeleton-loader [theme]="{ height: '10px', width : '100%', margin: '0 0 5px 0'}" appearance="line"></ngx-skeleton-loader>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="container pl-0 dv_desktop_sm_width" >
+              <div style="position:relative; padding: 15px 0;  height: auto;">
+                <ngx-skeleton-loader [theme]="{ height: '100px', position:'absolute', left: '0', width : '100px', float: 'left', margin: '0 15px 10px 0'}" appearance="line"></ngx-skeleton-loader>
+                <div class="dv_right_sketon_head_para" style="padding: 0 0 0 120px;">
+                  <ngx-skeleton-loader [theme]="{ height: '20px', width : '60%', margin: '0 0 5px 0'}" appearance="line"></ngx-skeleton-loader>
+                <ngx-skeleton-loader [theme]="{ height: '10px', width : '100%', margin: '0 0 5px 0'}" appearance="line"></ngx-skeleton-loader>
+                <ngx-skeleton-loader [theme]="{ height: '10px', width : '100%', margin: '0 0 5px 0'}" appearance="line"></ngx-skeleton-loader>
+                <ngx-skeleton-loader [theme]="{ height: '10px', width : '100%', margin: '0 0 5px 0'}" appearance="line"></ngx-skeleton-loader>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <ul class="dv_setting_ul" *ngIf="!loading" >
+          <li *ngFor="let item of mainList; index as i" >
+            <img src="assets/img/credit-wallet.png" class="float-left">
+            <div class="dv_credit_received_expiry plus" *ngIf="item.transaction_type_id==1">
+              <b>{{ item.created_date | date: 'dd/MM/yyyy'}}</b>
+              <div style="color: #008000;">Mirrors rewards Credited</div>
+              <strong>{{item.order_id}}</strong>
+              <span>+ AED {{(item.amount < 0) ? item.amount * -1 : item.amount}}</span>
+            </div>
+            <div class="dv_credit_received_expiry minus"  *ngIf="item.transaction_type_id==2">
+              <b>{{ item.created_date | date: 'dd/MM/yyyy'}}</b>
+              <div style="color: #4500ff;">Mirrors rewards Redeem</div>
+              <strong>{{item.order_id}}</strong>
+              <span>- AED {{(item.amount < 0) ? item.amount * -1 : item.amount}}</span>
+            </div>
+            <div class="dv_credit_received_expiry minus"  *ngIf="item.transaction_type_id==3">
+              <b>{{ item.created_date | date: 'dd/MM/yyyy'}}</b>
+              <div style="color: #008000;">Mirrors rewards Credited</div>
+              <strong>{{item.order_id}}</strong>
+              <span>- AED {{(item.amount < 0) ? item.amount * -1 : item.amount}}</span>
+            </div>
+          </li>
+          
+        </ul>
+        <h4 class="dv_wallet_faq_h4">have questions ?</h4>
+        <ul class="dv_wallet_faq_ul">
+          <li>I have Mirrors Credits. What happened to them now?<span>All your credits will be converted to Mirrors Cash, which you can apply on your services while you checkout.</span></li>
+          <li>What is Mirrors Cash? <span>Mirrors cash is given by us as part of our customer experience programs. It is redeemable across all categories and is valid for 1 year from the date of issue.</span></li>
+          <li>What is Mirrors Rewards?<span>We provide Mirrors reward points as part of promotional activities so that people like you may test out our main services. They are only valid in the categories specified on the award.</span></li>
+          <li>Are there any other important terms and Conditions?<span>Yes: 1. Reward points cannot be combined with other ongoing Mirrors promotions. 
+            2. Rewards will expire regardless of the service delivery date - even if the service delivery window is extended. In such instances, it is advised to use pre-payment methods to obtain incentives. 
+            3. Cash payments will not be eligible for rewards or cash.</span></li>
+  
+        </ul>
+      </div>
+    </div>
+  </div>

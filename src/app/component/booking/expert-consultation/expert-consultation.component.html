@@ -1,0 +1,61 @@
+<div class="dv_wrapper">
+  <div class="dv_header dv_diffrent_header h-auto border-bottom-0 pt-0" data-toggle="modal" data-target="#servicereview">
+    <div class="container dv_desktop_sm_width">
+      <div class="row">
+        <div class="dv_page_heading border-top-0 border-bottom mt-0 dv_height_search">
+            <span  style="cursor:pointer;" (click)="Back()"><svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg> Services or Consultation </span>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="dv_sub_category_page">
+  
+    <div class="container dv_desktop_sm_width">
+      <ik-image path="./assets/img/consultation.jpg" class="w-100"></ik-image>
+
+      <div class="row">
+          <div class="col-lg-12 col-md-12 col-xs-12 col-12 p-0"  *ngFor="let item of mainList; index as i">
+            
+              <a href="javascript:void(0)" title="{{item.category_name}}" (click)="getSubCategory(item.id,item.category_name)">
+                <ik-image path="{{item.mobile_image}}" class="dv_categori_icon w-100"></ik-image>
+              </a>
+            </div>
+        <!-- <div class="col-md-4 p-0">
+          <a href="#!">
+            <img src="./assets/img/expert-consultation.jpg" class="dv_categori_icon w-100">
+          </a>
+        </div> -->
+      </div>
+      
+    <ik-image path="{{howItWorkUrl}}"  class="display-desktop w-100" ></ik-image>
+    <ik-image path="{{whyMirrorUrl}}"  class="display-desktop w-100" ></ik-image>
+    <ik-image path="{{howItWorkUrl}}" class="display-mobile w-100" ></ik-image>
+      <ik-image path="{{whyMirrorUrl}}" class="display-mobile w-100" ></ik-image>
+  
+    </div>
+  </div>
+  <!-- <div class="dv_footer">
+    <button type="button" class="btn btn-default dv_footer">Pay </button>
+  </div> -->
+
+</div>
+
+<div class="modal bottom fade" id="openmenu" tabindex="-1" role="dialog" aria-labelledby="openmenu" style="z-index: 99999;">
+  <div class="modal-dialog dv_modal_top_hr" role="document" style="border-radius: 25px 25px 0 0; overflow: hidden;">
+    <div class="modal-content dv_viewmobile_filter_content">
+      <div class="modal-header dv_modal_filter_sm_txt_header">
+        <h5 class="modal-title dv_modal_filter_sm_txt">Account </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <svg style="position: absolute; top: 15px; right: 15px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <div class="modal-body overflow-auto" style="padding: 0 15px 80px 15px !important;">
+        <ul class="dv_ac_menu_bottom">
+          <li><a href="#!">Profile </a></li>
+          <li><a href="#!">My Bookings </a></li>
+          <li><a href="#!">Logout </a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

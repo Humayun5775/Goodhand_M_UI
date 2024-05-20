@@ -1,0 +1,18 @@
+.hide{
+display: none;
+}
+.dv_salon_home_bg{
+    padding: 0 0 100px 0;background-size: cover !important;background-repeat: no-repeat !important; background-position: center !important;
+}
+.dv_offer_pagination>span.swiper-pagination-bullet { background: #adadad !important; }
+.dv_offer_pagination>span.swiper-pagination-bullet-active { background: #7c00ff !important; }
+.swiper-button-prev { background: #ffffff; width: 45px; height: 45px; border-radius: 50%; margin: -37px 0 0 0; }
+.swiper-button-next { background: #ffffff; width: 45px; height: 45px; border-radius: 50%; margin: -37px 0 0 0; }
+.dv_offer_pagination>span.swiper-pagination-bullet { background: #adadad !important; }
+.dv_offer_pagination>span.swiper-pagination-bullet-active { background: #7c00ff !important; }
+.swiper-button-prev { background: #ffffff; width: 45px; height: 45px; border-radius: 50%; margin: -37px 0 0 0; }
+.swiper-button-next { background: #ffffff; width: 45px; height: 45px; border-radius: 50%; margin: -37px 0 0 0; }
+.dv_offer_pagination>span.swiper-pagination-bullet { background: #adadad !important; }
+.dv_offer_pagination>span.swiper-pagination-bullet-active { background: #7c00ff !important; }
+.swiper-button-prev { background: #ffffff; width: 45px; height: 45px; border-radius: 50%; margin: -37px 0 0 0; }
+.swiper-button-next { background: #ffffff; width: 45px; height: 45px; border-radius: 50%; margin: -37px 0 0 0; }

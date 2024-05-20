@@ -1,0 +1,154 @@
+<app-login></app-login>
+<div class="dv_wrapper" *ngIf="IsLoggedIn">
+  <div class="dv_header dv_diffrent_header h-auto border-bottom-0 pt-0" data-toggle="modal" data-target="#servicereview">
+    <div class="container  dv_desktop_sm_width">
+      <div class="row">
+        <div class="dv_page_heading border-top-0 border-bottom mt-0 dv_height_search">
+            <span style="cursor: pointer;" backButton>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg> Booking
+            </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="dv_sub_category_page">
+    <div class="container dv_desktop_sm_width" *ngIf="loading && IsLoggedIn" >
+      <div style="position:relative; padding: 15px 0;  height: 170px;">
+        <ngx-skeleton-loader [theme]="{ height: '150px', position:'absolute', left: '0', width : '150px', float: 'left', margin: '0 15px 10px 0'}" appearance="line"></ngx-skeleton-loader>
+        <div class="dv_right_sketon_head_para" style="padding: 0 0 0 160px;">
+          <ngx-skeleton-loader [theme]="{ height: '20px', width : '60%', margin: '0 0 5px 0'}" appearance="line"></ngx-skeleton-loader>
+        <ngx-skeleton-loader [theme]="{ height: '10px', width : '100%', margin: '0 0 5px 0'}" appearance="line"></ngx-skeleton-loader>
+        <ngx-skeleton-loader [theme]="{ height: '10px', width : '100%', margin: '0 0 5px 0'}" appearance="line"></ngx-skeleton-loader>
+        <ngx-skeleton-loader [theme]="{ height: '10px', width : '100%', margin: '0 0 5px 0'}" appearance="line"></ngx-skeleton-loader>
+        </div>
+      </div>
+    </div>
+    <div class="container dv_desktop_sm_width" *ngIf="loading  && IsLoggedIn" >
+      <div style="position:relative; padding: 15px 0;  height: 170px;">
+        <ngx-skeleton-loader [theme]="{ height: '150px', position:'absolute', left: '0', width : '150px', float: 'left', margin: '0 15px 10px 0'}" appearance="line"></ngx-skeleton-loader>
+        <div class="dv_right_sketon_head_para" style="padding: 0 0 0 160px;">
+          <ngx-skeleton-loader [theme]="{ height: '20px', width : '60%', margin: '0 0 5px 0'}" appearance="line"></ngx-skeleton-loader>
+        <ngx-skeleton-loader [theme]="{ height: '10px', width : '100%', margin: '0 0 5px 0'}" appearance="line"></ngx-skeleton-loader>
+        <ngx-skeleton-loader [theme]="{ height: '10px', width : '100%', margin: '0 0 5px 0'}" appearance="line"></ngx-skeleton-loader>
+        <ngx-skeleton-loader [theme]="{ height: '10px', width : '100%', margin: '0 0 5px 0'}" appearance="line"></ngx-skeleton-loader>
+        </div>
+      </div>
+    </div>
+    <div class="container dv_desktop_sm_width" *ngIf="loading" >
+      <div style="position:relative; padding: 15px 0;  height: 170px;">
+        <ngx-skeleton-loader [theme]="{ height: '150px', position:'absolute', left: '0', width : '150px', float: 'left', margin: '0 15px 10px 0'}" appearance="line"></ngx-skeleton-loader>
+        <div class="dv_right_sketon_head_para" style="padding: 0 0 0 160px;">
+          <ngx-skeleton-loader [theme]="{ height: '20px', width : '60%', margin: '0 0 5px 0'}" appearance="line"></ngx-skeleton-loader>
+        <ngx-skeleton-loader [theme]="{ height: '10px', width : '100%', margin: '0 0 5px 0'}" appearance="line"></ngx-skeleton-loader>
+        <ngx-skeleton-loader [theme]="{ height: '10px', width : '100%', margin: '0 0 5px 0'}" appearance="line"></ngx-skeleton-loader>
+        <ngx-skeleton-loader [theme]="{ height: '10px', width : '100%', margin: '0 0 5px 0'}" appearance="line"></ngx-skeleton-loader>
+        </div>
+      </div>
+    </div>
+    <div class="container dv_desktop_sm_width" *ngIf="loading" >
+      <div style="position:relative; padding: 15px 0;  height: 170px;">
+        <ngx-skeleton-loader [theme]="{ height: '150px', position:'absolute', left: '0', width : '150px', float: 'left', margin: '0 15px 10px 0'}" appearance="line"></ngx-skeleton-loader>
+        <div class="dv_right_sketon_head_para" style="padding: 0 0 0 160px;">
+          <ngx-skeleton-loader [theme]="{ height: '20px', width : '60%', margin: '0 0 5px 0'}" appearance="line"></ngx-skeleton-loader>
+        <ngx-skeleton-loader [theme]="{ height: '10px', width : '100%', margin: '0 0 5px 0'}" appearance="line"></ngx-skeleton-loader>
+        <ngx-skeleton-loader [theme]="{ height: '10px', width : '100%', margin: '0 0 5px 0'}" appearance="line"></ngx-skeleton-loader>
+        <ngx-skeleton-loader [theme]="{ height: '10px', width : '100%', margin: '0 0 5px 0'}" appearance="line"></ngx-skeleton-loader>
+        </div>
+      </div>
+    </div>
+    <div class="container dv_desktop_sm_width" *ngIf="loading" >
+      <div style="position:relative; padding: 15px 0;  height: 170px;">
+        <ngx-skeleton-loader [theme]="{ height: '150px', position:'absolute', left: '0', width : '150px', float: 'left', margin: '0 15px 10px 0'}" appearance="line"></ngx-skeleton-loader>
+        <div class="dv_right_sketon_head_para" style="padding: 0 0 0 160px;">
+          <ngx-skeleton-loader [theme]="{ height: '20px', width : '60%', margin: '0 0 5px 0'}" appearance="line"></ngx-skeleton-loader>
+        <ngx-skeleton-loader [theme]="{ height: '10px', width : '100%', margin: '0 0 5px 0'}" appearance="line"></ngx-skeleton-loader>
+        <ngx-skeleton-loader [theme]="{ height: '10px', width : '100%', margin: '0 0 5px 0'}" appearance="line"></ngx-skeleton-loader>
+        <ngx-skeleton-loader [theme]="{ height: '10px', width : '100%', margin: '0 0 5px 0'}" appearance="line"></ngx-skeleton-loader>
+        </div>
+      </div>
+    </div>
+    <div class="container dv_desktop_sm_width" *ngIf="loading" >
+      <div style="position:relative; padding: 15px 0;  height: 170px;">
+        <ngx-skeleton-loader [theme]="{ height: '150px', position:'absolute', left: '0', width : '150px', float: 'left', margin: '0 15px 10px 0'}" appearance="line"></ngx-skeleton-loader>
+        <div class="dv_right_sketon_head_para" style="padding: 0 0 0 160px;">
+          <ngx-skeleton-loader [theme]="{ height: '20px', width : '60%', margin: '0 0 5px 0'}" appearance="line"></ngx-skeleton-loader>
+        <ngx-skeleton-loader [theme]="{ height: '10px', width : '100%', margin: '0 0 5px 0'}" appearance="line"></ngx-skeleton-loader>
+        <ngx-skeleton-loader [theme]="{ height: '10px', width : '100%', margin: '0 0 5px 0'}" appearance="line"></ngx-skeleton-loader>
+        <ngx-skeleton-loader [theme]="{ height: '10px', width : '100%', margin: '0 0 5px 0'}" appearance="line"></ngx-skeleton-loader>
+        </div>
+      </div>
+    </div>
+    <div class="container dv_desktop_sm_width" *ngIf="loading" >
+      <div style="position:relative; padding: 15px 0;  height: 170px;">
+        <ngx-skeleton-loader [theme]="{ height: '150px', position:'absolute', left: '0', width : '150px', float: 'left', margin: '0 15px 10px 0'}" appearance="line"></ngx-skeleton-loader>
+        <div class="dv_right_sketon_head_para" style="padding: 0 0 0 160px;">
+          <ngx-skeleton-loader [theme]="{ height: '20px', width : '60%', margin: '0 0 5px 0'}" appearance="line"></ngx-skeleton-loader>
+        <ngx-skeleton-loader [theme]="{ height: '10px', width : '100%', margin: '0 0 5px 0'}" appearance="line"></ngx-skeleton-loader>
+        <ngx-skeleton-loader [theme]="{ height: '10px', width : '100%', margin: '0 0 5px 0'}" appearance="line"></ngx-skeleton-loader>
+        <ngx-skeleton-loader [theme]="{ height: '10px', width : '100%', margin: '0 0 5px 0'}" appearance="line"></ngx-skeleton-loader>
+        </div>
+      </div>
+    </div>
+    <div class="container dv_desktop_sm_width" *ngIf="loading" >
+      <div style="position:relative; padding: 15px 0;  height: 170px;">
+        <ngx-skeleton-loader [theme]="{ height: '150px', position:'absolute', left: '0', width : '150px', float: 'left', margin: '0 15px 10px 0'}" appearance="line"></ngx-skeleton-loader>
+        <div class="dv_right_sketon_head_para" style="padding: 0 0 0 160px;">
+          <ngx-skeleton-loader [theme]="{ height: '20px', width : '60%', margin: '0 0 5px 0'}" appearance="line"></ngx-skeleton-loader>
+        <ngx-skeleton-loader [theme]="{ height: '10px', width : '100%', margin: '0 0 5px 0'}" appearance="line"></ngx-skeleton-loader>
+        <ngx-skeleton-loader [theme]="{ height: '10px', width : '100%', margin: '0 0 5px 0'}" appearance="line"></ngx-skeleton-loader>
+        <ngx-skeleton-loader [theme]="{ height: '10px', width : '100%', margin: '0 0 5px 0'}" appearance="line"></ngx-skeleton-loader>
+        </div>
+      </div>
+    </div>
+    <div class="container  dv_desktop_sm_width pt-4"  *ngIf="!loading" >
+      <div class="dv_salon_for_women_wrapper"  *ngFor="let item of orderList; index as i" style="cursor: pointer;" (click)="GetOrderDetail(item.status,item.order_id)">
+        <h4>{{item.booking_type}}</h4>
+        <div class="dv_salon_for_women_bookings mb-3" >
+          <div class="dv_salon_for_booking_cancelled" [ngClass]="{'dv_salon_for_booking_cancelled':(item.status=='3'|| item.status=='5' ),'dv_salon_for_booking_accpeted':(item.status=='1' || item.status=='2' || item.status=='4' || item.status=='6' )}" >
+          {{item.status_name}}
+          </div>
+         
+          <div class="dv_salon_for_booking_service">
+           {{item.service_name}}
+          </div>
+          <div class="dv_salon_for_booking_timing">
+            {{item.date_time_slot.split(',')[0]}} : {{item.date_time_slot.split(',')[1]}}  
+          </div>
+          <hr class="dv_divider mb-3">
+          <div class="dv_salon_for_booking_payment py_received"   *ngIf="item.status=='6'">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> payment received
+          </div>
+          <div class="dv_salon_for_booking_payment py_received"   *ngIf="item.payment_mode=='cash' && (item.status=='1' || item.status=='2')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> pay at saloon
+          </div>
+          <div class="dv_salon_for_booking_payment py_failed"   *ngIf="item.status=='5'">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg> payment failed
+            <a href="javascript:void()"  (click)="Retry(item.id,item.grand_amount)">retry</a>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </div>
+      </div>
+      <div class="dv_no_result text-center mt-5" *ngIf="orderList.length==0">
+        <!-- <img style=" width: 70px; margin: 30px 0; " src="img/empty-search.svg"> -->
+
+        <ik-image  style=" width: 70px; margin: 30px 0; "  path="assets/img/empty-history.png"></ik-image> 
+        <h5>Empty Booking  </h5>
+        <p>Hey, it feels so empty here. </p>
+        <a routerLink="booking/home">Book Services </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-mirror-footer></app-mirror-footer>
+
+
+  
+<div class="loaderwrapper" *ngIf="IsLoading">
+  <div class="pageloader">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</div>

@@ -1,0 +1,94 @@
+<input type="button" hidden #btninvalidotp  data-toggle="modal" data-target="#invalidotp" />
+<input type="button" hidden #btnLogin  data-toggle="modal" data-target="#mobilelogin" />
+
+<div class="modal bottom fade areusuretxtmodal" id="mobilelogin" tabindex="-1" role="dialog" aria-labelledby="mobilelogin" style="z-index: 99999;" data-backdrop="static" data-keyboard="false">
+    <svg backButton  *ngIf="!IsOTP" data-dismiss="modal" data-dismiss="modal" style="opacity:1; position: absolute; bottom: 320px; width: 35px; right: 15px; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.87 14.87"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:none;stroke:#565656;stroke-linecap:round;stroke-linejoin:round;stroke-width:.86px;}</style></defs><circle class="cls-1" cx="7.43" cy="7.43" r="7.43"></circle><g><line class="cls-2" x1="10.02" y1="4.85" x2="4.85" y2="10.02"></line><line class="cls-2" x1="4.85" y1="4.85" x2="10.02" y2="10.02"></line></g></svg>
+    <div *ngIf="!IsOTP" class="modal-dialog" role="document" style="height: 300px; border-radius: 25px 25px 0 0; overflow: hidden;">
+      <div class="modal-content dv_viewmobile_filter_content">
+        <div class="modal-header dv_modal_filter_sm_txt_header">
+          <h5 class="modal-title dv_modal_filter_sm_txt">Login/Sign up </h5> 
+          <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <svg style="position: absolute; top: 15px; right: 15px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button> -->
+        </div>
+        <div class="modal-body overflow-auto" style="padding: 25px 15px 80px 15px !important;">
+          <div class="input-group mb-3">
+            <span class="input-group-addon dv_971_mobile_code" >+971</span>
+            <input type="tel" #mobileNo (keyup)="ValidMobile(mobileNo.value)" class="form-control dv_mobile_number_popup" placeholder="Enter mobile number">
+          </div>
+          <div class="round">
+              <input type="checkbox" checked id="checkbox" />
+              <label for="checkbox"></label>
+              Get order updates on WhatsApp
+            </div>
+        </div>
+        <div class="modal-footer modal-footer-fixed view_continue_above_modal">
+          <a href="javascript:void(0);"   [ngClass]="{'active':IsValidNo,'user-select-none':!IsValidNo,'height-50':IsOTPProceed}"  (click)="SendSMS(mobileNo.value)" class="dv_fullwidth_btn"><div *ngIf="IsOTPProceed"  class="buttonloader"><div></div><div></div><div></div><div></div></div><div *ngIf="!IsOTPProceed">Proceed</div> </a> <!-- active -->
+        </div>
+      </div>
+    </div>
+    <svg backButton *ngIf="IsOTP" (click)="clearIsOTP()"  data-dismiss="modal" data-dismiss="modal" style="opacity:1; position: absolute; bottom: 350px; width: 35px; right: 15px; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.87 14.87"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:none;stroke:#565656;stroke-linecap:round;stroke-linejoin:round;stroke-width:.86px;}</style></defs><circle class="cls-1" cx="7.43" cy="7.43" r="7.43"></circle><g><line class="cls-2" x1="10.02" y1="4.85" x2="4.85" y2="10.02"></line><line class="cls-2" x1="4.85" y1="4.85" x2="10.02" y2="10.02"></line></g></svg>
+   
+    <div *ngIf="IsOTP"  class="modal-dialog" role="document" style="height: 320px; border-radius: 15px 25px 0 0; overflow: hidden;">
+      <svg  (click)="clearIsOTP()" data-dismiss="modal" data-dismiss="modal" style="opacity:1; position: absolute; bottom: 420px; width: 35px; right: 15px; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.87 14.87"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:none;stroke:#565656;stroke-linecap:round;stroke-linejoin:round;stroke-width:.86px;}</style></defs><circle class="cls-1" cx="7.43" cy="7.43" r="7.43"></circle><g><line class="cls-2" x1="10.02" y1="4.85" x2="4.85" y2="10.02"></line><line class="cls-2" x1="4.85" y1="4.85" x2="10.02" y2="10.02"></line></g></svg>
+      <div class="modal-content dv_viewmobile_filter_content">
+        <div class="modal-header dv_modal_filter_sm_txt_header">
+          <h5 class="modal-title dv_modal_filter_sm_txt">Verification Code </h5> 
+          <button hidden type="button" #btnClose class="close" data-dismiss="modal" aria-label="Close">
+            <svg style="position: absolute; top: 15px; right: 15px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button> 
+        </div>
+        <div class="modal-body overflow-auto" style="padding: 25px 15px 80px 15px !important;">
+          
+          <div class="row">
+            <div class="col-md-8 col-sm-8 col-xs-8 col-8">
+              <div class="dv_wehave_sent_txt">we have sent you 4 digit code on {{otpDetail.mobile}}</div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4 col-4">
+              <a class="dv_edit_contact_a_popup" href="javascript:void(0);" (click)="EditNo()">edit number </a>
+            </div>
+          </div>
+          <div class="dv_4digit_code_inputs mb-2">
+            <!-- <input type="tel" name="" class="form-control dv_verification_code">
+            <input type="tel" name="" class="form-control dv_verification_code">
+            <input type="tel" name="" class="form-control dv_verification_code">
+            <input type="tel" name="" class="form-control dv_verification_code"> -->
+            <ng-otp-input  class=" dv_verification_code"  (onInputChange)="login($event)"  [config]="{length:4,allowNumbersOnly:true}"></ng-otp-input>
+          </div>
+          <strong  *ngIf="!IsResendOTP" class="dv_remain_count">00:{{this.timeLeft}} </strong>
+          <strong   *ngIf="IsResendOTP" class="dv_remain_count">    <a href="javascript:void(0)" (click)="ResendOTP()">Resend</a> </strong>
+  
+        </div>
+        <div class="modal-footer modal-footer-fixed view_continue_above_modal">
+          <a href="javascript:void(0);" class="dv_fullwidth_btn" [ngClass]="{'height-50 active':IsOTPLogin}"><div *ngIf="IsOTPLogin"  class="buttonloader"><div></div><div></div><div></div><div></div></div><div *ngIf="!IsOTPLogin">Login</div> </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<div class="modal bottom fade areusuretxtmodal" id="invalidotp" tabindex="-1" role="dialog" aria-labelledby="invalidotp" style="z-index: 99999;" data-backdrop="static" data-keyboard="false">
+    <svg data-dismiss="modal"  (click)="clearOTP()"  data-dismiss="modal" style="z-index:1; opacity:1; position: absolute; bottom : 270px; width: 35px; right: 15px; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.87 14.87"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:none;stroke:#565656;stroke-linecap:round;stroke-linejoin:round;stroke-width:.86px;}</style></defs><circle class="cls-1" cx="7.43" cy="7.43" r="7.43"></circle><g><line class="cls-2" x1="10.02" y1="4.85" x2="4.85" y2="10.02"></line><line class="cls-2" x1="4.85" y1="4.85" x2="10.02" y2="10.02"></line></g></svg>
+    <div class="modal-dialog" role="document" style="height: 250px; z-index:1; border-radius: 15px 25px 0 0; overflow: hidden;">
+      <div class="modal-content dv_viewmobile_filter_content">
+        <div class="modal-header dv_modal_filter_sm_txt_header">
+          <h5 class="modal-title dv_modal_filter_sm_txt">In valid OTP </h5> 
+          <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <svg style="position: absolute; top: 15px; right: 15px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button> -->
+        </div>
+        <div class="modal-body overflow-auto" style="padding: 15px !important;">
+         
+           <div class="dv_coupon_noexist_wrap">
+            <img src="./assets/img/wrong-otp.png" class="dv_coupon_noexist">
+            <span>In valid OTP</span>
+          </div>
+        </div>
+        <div class="modal-footer modal-footer-fixed view_continue_above_modal">
+          <a href="javascript:void(0);"  (click)="clearOTP()" data-dismiss="modal" class="dv_fullwidth_btn active">Okay got it </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="loaderwrapper" *ngIf="IsLoading"><div class="pageloader"><div></div><div></div><div></div><div></div></div></div>
+
+  

@@ -1,0 +1,68 @@
+
+  <input type="button" hidden #btnprofile data-toggle="modal" data-target="#profile" />
+<div class="dv_wrapper">
+    <div class="dv_header dv_diffrent_header h-auto border-bottom-0 pt-0" data-toggle="modal" data-target="#servicereview">
+      <div class="container">
+        <div class="row">
+          <div class="dv_page_heading border-top-0 border-bottom mt-0 dv_height_search">
+              <span  style="cursor: pointer;" backButton><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg> Account </span>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="dv_sub_category_page">
+        <!-- <h4 class="dv_heading_static_ac">account </h4> -->
+      <div class="container p-0 pt-x4">
+        <div class="dv_user_svg_account_txt position-relative" (click)="OpenPopUp()">
+          <svg style=" width: 70px; margin: 0 0 15px 15px; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.45 5.45"><circle style="fill:#dbdbdb;" cx="2.73" cy="2.72" r="2.72"/><path style="fill:#f4f4f4;" d="M2.63,0c.06,0,.13,0,.19,0,.03,0,.05,0,.08,.01,.08,0,.17,.01,.25,.03,.45,.07,.85,.24,1.21,.51,.62,.48,.98,1.1,1.07,1.88,0,.07,.02,.13,.02,.2v.18s0,.04-.01,.07c-.01,.1-.02,.2-.03,.3-.11,.65-.42,1.18-.91,1.61-.01,0-.02,.02-.03,.02-.08-.04-.15-.09-.22-.12-.26-.13-.52-.26-.78-.39-.13-.06-.19-.16-.19-.31,0-.1,0-.2,0-.29,0-.02,0-.05,.02-.07,.13-.17,.24-.37,.31-.57,0-.02,.03-.05,.05-.06,.1-.06,.16-.14,.16-.26,0-.12,0-.23,0-.35,0-.07-.02-.13-.07-.19-.01-.02-.02-.04-.02-.06,0-.17,0-.34,0-.51,.01-.31-.14-.57-.41-.7-.14-.07-.29-.09-.44-.11-.22-.02-.44,0-.66,.07-.36,.12-.51,.4-.51,.72,0,.17,0,.35,0,.52,0,.02-.01,.05-.02,.07-.04,.06-.07,.12-.06,.19,0,.11,0,.23,0,.34,0,.09,.03,.16,.1,.23,.02,.02,.03,.04,.04,.06,.06,.22,.16,.43,.3,.61,.01,.02,.02,.04,.02,.06,0,.1,0,.2,0,.29,0,.12-.05,.22-.16,.29-.32,.18-.64,.35-.97,.53-.08-.09-.18-.18-.27-.28C.31,4.09,.08,3.59,.02,3.02,.02,2.96,0,2.89,0,2.82c0-.06,0-.13,0-.19,0-.02,0-.05,.01-.07,.01-.11,.02-.21,.04-.32,.11-.57,.37-1.07,.79-1.47C1.28,.34,1.81,.09,2.43,.02,2.5,.02,2.56,0,2.63,0Z"/></svg>
+          <div class="dv_user_nmphone_account_txt" *ngIf="customer.length>0">
+           {{customer[0].name}}
+            <span>{{customer[0].phone}}</span>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right" style=" float: right; color: #999; position: absolute; right: 15px; top: 25px; width: 15px; height: 15px; "><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </div>
+        <hr class="dv_divider" style="height: 10px;display: block;margin: 0;background: #ebebeb;border: none;">
+        <ul class="dv_help_ul">
+          <li><a routerLink="/help" class="text-capitalize">help center <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+        </ul>
+        <hr class="dv_divider" style="height: 10px;display: block;margin: 0;background: #ebebeb;border: none;">
+        <ul class="dv_help_ul">
+          <li><a routerLink=/my-booking" class="text-capitalize">my bookings <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+          <li><a href="javascript:void(0)" data-toggle="modal" data-target="#changelanguage" class="text-capitalize">change language <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+          <li><a  routerLink="/mirror-wallet" class="text-capitalize">my wallet <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+          <li><a  routerLink="/refer-earn" class="text-capitalize">refer & earn <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+          <li><a  routerLink="/card-list" class="text-capitalize"> payment options <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+          <li><a   routerLink="/setting"  class="text-capitalize">setting <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+          <li><a  routerLink="/what-is-mirrors" class="text-capitalize">about mirrors <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+          <li><a  href="javascript:void(0)" class="text-capitalize">share mirrors beauty lounge <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+          <li><a  href="javascript:void(0)" class="text-capitalize">rate mirrors beauty lounge <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+          <li><a  href="javascript:void(0)" class="text-capitalize">Scheduled bookings <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+        </ul>
+        <a href="javascript:void(0)" (click)="logout()" style=" display: block; margin: 30px auto 0 auto; text-align: center; color: #ff0000; text-transform: capitalize; ">logout</a>
+
+      </div>
+    </div>
+  </div>
+  <div class="modal bottom fade areusuretxtmodal" id="changelanguage" tabindex="-1" role="dialog" aria-labelledby="changelanguage" style="z-index: 99999;" data-backdrop="static" data-keyboard="false">
+    <svg data-dismiss="modal" style=" position: absolute; bottom: 362px; width: 30px; right: 15px; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.87 14.87"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:none;stroke:#565656;stroke-linecap:round;stroke-linejoin:round;stroke-width:.86px;}</style></defs><circle class="cls-1" cx="7.43" cy="7.43" r="7.43"></circle><g><line class="cls-2" x1="10.02" y1="4.85" x2="4.85" y2="10.02"></line><line class="cls-2" x1="4.85" y1="4.85" x2="10.02" y2="10.02"></line></g></svg>
+    <div class="modal-dialog" role="document" style="height: 350px; border-radius: 15px 25px 0 0; overflow: hidden;">
+      <div class="modal-content dv_viewmobile_filter_content">
+        <div class="modal-header dv_modal_filter_sm_txt_header">
+          <h5 class="modal-title dv_modal_filter_sm_txt">Change Language </h5> 
+        </div>
+        <div class="modal-body overflow-auto" style="padding: 25px 15px 80px 15px !important;">
+            <div class="radio mb-3 border-bottom">
+              <label class="font-family-bold"><input class="mr-3 mb-3" type="radio" name="optradio" checked>English </label>
+            </div>
+            <div class="radio">
+              <label class="font-family-bold"><input class="mr-3" type="radio" name="optradio">Arabic </label>
+            </div>
+        </div>
+        <div class="modal-footer modal-footer-fixed view_continue_above_modal">
+          <a href="javascript:void(0);" class="dv_fullwidth_btn active">Save </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-mirror-footer></app-mirror-footer>
+      <app-profile  [customerId]="customerId"></app-profile>

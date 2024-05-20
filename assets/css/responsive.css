@@ -1,0 +1,45 @@
+@media (max-width: 1170px){
+	img.dv_sub_categori_icon { width: 70% !important; border-radius: 6px; }
+
+}
+
+@media (min-width: 1080px){
+	.dv_li_25_wdt>li { width: 100% !important; }
+}
+
+@media (max-width: 1080px){
+	.dv_modal_dialog_desktop { width:50% !important; }
+	.dv_header_search_icon_input.position-relative>.dv_loading_search, ul.dv_search_showing_services_ul { display: none !important; }
+	.dv_header_search_icon_input>input.form-control { border: 1px solid #d0d0d0; }
+	.dv_view_mobile_view { display: none !important;}
+	ul.dv_category_home_ul { margin: 0; padding: 0 0 15px 0; list-style-type: none; overflow: auto; white-space: nowrap; overflow-x: auto; }
+	ul.dv_category_home_ul>li { width: auto; margin: 0; text-align: center; padding: 0 15px 0 0; display: inline-block; }
+	ul.dv_category_home_ul>li>a>span { display: block; width: 100%; }
+	ul.dv_category_home_ul>li>a>img { height: 200px !important; width: auto !important; }
+	.dv_banner_section { padding: 30px 0; }
+	.dv_header_menus {display: none;}
+	.dv_header_search { background: #ffffff; padding: 15px 0 100px 0; }
+	.dv_user_location { display: block; color: #ffffff; }
+	.dv_desktop_logo {display: none;}
+	.dv_mobile_logo { display: block; width: 150px; margin: 0 0 25px 0; padding: 0; }
+	.dv_user_location { display: block; color: #000000; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; font-size: 14px; font-weight: 500; font-family: 'Axiforma', sans-serif; border-bottom: 1px dashed #999;     margin: 0 0 15px 0; }
+	.dv_user_location>svg { width: 15px; height: 15px; margin: 0 5px 0 0; }
+	.dv_header_search>div>h3 { display: none; margin: 0; padding: 15px 0; /*display: block;*/ font-size: 30px; text-align: center; color: #000000; font-weight: 800; }
+	.dv_header_search>div>h3>span { color: #7c00ff; }
+	.dv_header_search_input {width: 100%;}
+	.dv_header_search_input>input.form-control { border: 1px solid #ebebeb; }
+	.dv_desktop_banner {display: none;}
+	.dv_mobile_banner {display: block;}
+	.dv_services_name_txt_home { margin: 0; color: #999; font-size: 12px; }
+	.download-app { display: none; }
+	.dv_footer_home { padding: 15px 0; }
+	.dv_social_links_h3 { margin: 15px 0 !important; }
+	.dv_footer_home_rights { padding: 25px 0 85px 0; }
+	.dv_fixed_bottom_bar { display: block; } 
+}
+
+@media (max-width: 991px){
+	img.dv_sub_categori_icon { width: 100%;}
+	.dv_sub_categori_wrap { padding: 15px 0 0 0; }
+
+}

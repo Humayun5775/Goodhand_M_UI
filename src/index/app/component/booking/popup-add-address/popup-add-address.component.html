@@ -1,0 +1,22 @@
+
+   <div class="dv_saved_address_list">
+        <div class="form-check"  *ngFor="let item of mainList; index as i">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input"  (click)="SetDefaultAdd(item)" name="optradio">
+            <div class="dv_saved_address_wrap">
+              <span>{{item.address_type}} </span>
+              <p>{{item.address}} </p>
+            </div>
+          </label>
+          <ul class="dv_save_address_delete_edit_ul">
+            <li><a href="javascript:void(0);" (click)="Edit(item.id)">Edit </a></li>
+            <li><a href="javascript:void(0);"  (click)="Delete(item)">Delete </a></li>
+          </ul>
+        </div>
+         
+
+  
+      </div>
+
+     
+   

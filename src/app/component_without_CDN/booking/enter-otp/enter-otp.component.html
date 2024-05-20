@@ -1,0 +1,33 @@
+
+<div class="dv_wrapper">
+     <!-- <app-header></app-header>
+<div class="dv_content"> -->
+  <app-header-top></app-header-top>
+  <div class="dv_sub_category_page">
+      <div class="dv_subscategory_wrapper">
+        <div class="container">
+          <h4 class="dv_subscategory_heading">Enter OTP </h4>
+          <div class="dv_mobile_otp_wrap">
+            <input type="text" (keyup)="login(txtOTP.value)" #txtOTP class="form-control dv_enter_location_inputs text-center mt-3" placeholder="*    *    *    *    " name="">
+          </div>
+        </div>
+        <hr class="dv_bottom_space p-t-3">
+        <p class="ml-3 mt-3 dv_sm_para">{{otpDetail.msg}}</p>
+        <div class="dv_resend_otp_after_1_min" *ngIf="!IsResend">
+          resend OTP after <span>{{this.timeLeft}} </span>
+        </div>
+        <div class="dv_resend_otp_after_1_min"  *ngIf="IsResend">
+          <a href="javascript:void(0)" (click)="ResendOTP()">Resend</a>
+        </div>
+      </div>
+      <!-- <hr class="dv_bottom_space p-t-3" /> -->
+  
+  
+    </div>
+    
+    <div class="dv_footer view_continue_above_modal">
+      <div class="container">
+        <a href="javascript:void(0);" (click)="login(txtOTP.value)"  class="dv_continue_with">Login </a>
+      </div>
+    </div>
+  </div>

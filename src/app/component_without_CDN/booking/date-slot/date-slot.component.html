@@ -1,0 +1,38 @@
+<div class="dv_wrapper">
+     <!-- <app-header></app-header>
+<div class="dv_content"> -->
+  <app-header-top></app-header-top>
+  <div class="dv_sub_category_page">
+      <div class="dv_subscategory_wrapper">
+        <div class="container">
+          <h4 class="dv_subscategory_heading">Date </h4>
+          <div class="dv_date_slot_wrapper">
+            <swiper    [config]="config" class="swiper mySwiper mb-3">
+            <ng-template swiperSlide *ngFor="let item of slotDate; index as i">
+              <button type="button" class="btn btn-default dv_select_date_slot" [ngClass]="{'selected': selectedSlotDate==item}" (click)="getSlotDate(item)"><span *ngIf="i==0">Today</span><span *ngIf="i==1">Tomorrow</span> <span *ngIf="i>1">{{item | date: 'dd MMM'}}</span></button>
+           </ng-template>
+          </swiper>
+            
+          </div>
+          <div class="dv_time_slot_wrapperm">
+            <h4 class="dv_subscategory_heading">Timing </h4>
+            <div class="row mt-3">
+         
+              <div class="col-md-4 col-sm-4 col-xs-6 col-6"  *ngFor="let item of slotTime; index as i">
+                <button type="button" class="btn btn-default dv_select_time_slot" [ngClass]="{'selected': selectedTime==item}"  (click)="getSlotTime(item)">{{item=="00:00PM"?"12:00PM":item=="00:00AM"?"12:A0PM":item=="00:30PM"?"12:30PM":item=="00:30AM"?"12:30AM":item}}</button>            
+              </div>
+              
+  
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr class="dv_bottom_space p-t-3" />
+    </div>
+    
+    <div class="dv_footer view_continue_above_modal">
+      <div class="container">
+        <a href="javascript:void(0);" (click)="Checkout()" *ngIf="isCheckout" class="dv_continue_with active">Checkout </a>
+      </div>
+    </div>
+  </div>

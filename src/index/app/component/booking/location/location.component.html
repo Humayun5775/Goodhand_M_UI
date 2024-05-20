@@ -1,0 +1,174 @@
+<!-- 
+<div class="dv_wrapper">
+ 
+      <div class="dv_header dv_diffrent_header h-auto border-bottom-0 pt-0">
+        <div class="container">
+          <div class="row">
+            <div class="dv_page_heading border-top-0 border-bottom mt-0 dv_height_search">
+              <span style="cursor:pointer;" (click)="Back()"><svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>Choose Location</span>
+           
+                  </div>
+          </div>
+        </div>
+      </div>
+      <div class="dv_sub_category_page">
+      <div class="dv_subscategory_wrapper">
+        <div class="container"  *ngIf="!loading">
+           </div>
+        <div class="container" *ngIf="loading" >
+          <div class="dv_skelton_load_branches" >
+            <ngx-skeleton-loader [theme]="{ height: '150px', margin: '15px 0 10px 0'}" appearance="line"></ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{ height: '15px', width : '50%', margin: '0 0 10px 0'}" appearance="line"></ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{ height: '10px', width : '100%', margin: '0 0 10px 0'}" appearance="line"></ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{ height: '10px', width : '80%', margin: '0 0 10px 0'}" appearance="line"></ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{ height: '40px', width : '100px', float: 'left', margin: '0 15px 10px 0'}" appearance="line"></ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{ height: '40px', width : '100px', margin: '0 0 10px 0'}" appearance="line"></ngx-skeleton-loader>
+          </div>
+          <div class="dv_skelton_load_branches" >
+            <ngx-skeleton-loader [theme]="{ height: '150px', margin: '15px 0 10px 0'}" appearance="line"></ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{ height: '15px', width : '50%', margin: '0 0 10px 0'}" appearance="line"></ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{ height: '10px', width : '100%', margin: '0 0 10px 0'}" appearance="line"></ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{ height: '10px', width : '80%', margin: '0 0 10px 0'}" appearance="line"></ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{ height: '40px', width : '100px', float: 'left', margin: '0 15px 10px 0'}" appearance="line"></ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{ height: '40px', width : '100px', margin: '0 0 10px 0'}" appearance="line"></ngx-skeleton-loader>
+          </div>
+          <div class="dv_skelton_load_branches" >
+            <ngx-skeleton-loader [theme]="{ height: '150px', margin: '15px 0 10px 0'}" appearance="line"></ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{ height: '15px', width : '50%', margin: '0 0 10px 0'}" appearance="line"></ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{ height: '10px', width : '100%', margin: '0 0 10px 0'}" appearance="line"></ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{ height: '10px', width : '80%', margin: '0 0 10px 0'}" appearance="line"></ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{ height: '40px', width : '100px', float: 'left', margin: '0 15px 10px 0'}" appearance="line"></ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{ height: '40px', width : '100px', margin: '0 0 10px 0'}" appearance="line"></ngx-skeleton-loader>
+          </div>
+          <div class="dv_skelton_load_branches" >
+            <ngx-skeleton-loader [theme]="{ height: '150px', margin: '15px 0 10px 0'}" appearance="line"></ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{ height: '15px', width : '50%', margin: '0 0 10px 0'}" appearance="line"></ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{ height: '10px', width : '100%', margin: '0 0 10px 0'}" appearance="line"></ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{ height: '10px', width : '80%', margin: '0 0 10px 0'}" appearance="line"></ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{ height: '40px', width : '100px', float: 'left', margin: '0 15px 10px 0'}" appearance="line"></ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{ height: '40px', width : '100px', margin: '0 0 10px 0'}" appearance="line"></ngx-skeleton-loader>
+          </div>
+          <div class="dv_skelton_load_branches" >
+            <ngx-skeleton-loader [theme]="{ height: '150px', margin: '15px 0 10px 0'}" appearance="line"></ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{ height: '15px', width : '50%', margin: '0 0 10px 0'}" appearance="line"></ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{ height: '10px', width : '100%', margin: '0 0 10px 0'}" appearance="line"></ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{ height: '10px', width : '80%', margin: '0 0 10px 0'}" appearance="line"></ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{ height: '40px', width : '100px', float: 'left', margin: '0 15px 10px 0'}" appearance="line"></ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{ height: '40px', width : '100px', margin: '0 0 10px 0'}" appearance="line"></ngx-skeleton-loader>
+          </div>
+        </div>
+        <div *ngFor="let item of mainList; index as i">
+          <div class="container">
+           
+            <div class="dv_branches_location_list">
+              <div class="dv_slider position-relative mt-3 mb-1">
+               
+          <carousel [isAnimated]="true" noWrapSlides = false  #carousel{{item.id}}>
+                  <slide *ngFor="let it of silderList[item.id]; index as j">
+                    <img *ngIf="it.type=='image'"  (error) ="onImgError($event)"  src="{{it.image}}"  class="w-100">
+                    <video  *ngIf="it.type!='image'" class="video"   playsInline autoPlay muted loop class="w-100">
+                      <source src="{{it.image}}"  type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
+            </slide>
+               </carousel>  
+               
+
+              <div class="swiper mb-2">
+                  <div class="swiper-wrapper">
+             
+      
+                 
+                  </div>
+                  <div class="swiper-pagination"></div>
+                </div> 
+                <span  *ngIf="currentLocation && currentLocation.id==item.id"  class="nearsalon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> near salon </span>            
+              </div>
+              <h4>{{item.location_name}}</h4>
+              <p>{{item.address}} </p>
+ <span *ngIf="timing=='alarm'">Hour : <span style="color:#008000;">open</span> - <strong style="color:#ff0000;">closed soon <span>10 PM </span> </strong></span>
+ <span *ngIf="timing=='close'">Hour : <span style="color: #008000;">Closed </span> - <strong>Open <span>10 AM </span> </strong></span>
+ <span *ngIf="timing=='open'">Hour : <span style="color:#008000;">open</span> - <strong>closed <span>10 PM </span> </strong></span>
+              <ul class="dv_call_whatsapp_ul">
+                <li><a href="tel:{{item.phone}}"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#282828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone-call"><path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></a></li>
+                <li><a href="https://wa.me/{{item.whats_app}}" target="_blank"><svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 40 40" width="30px" height="30px"><path fill="#f2faff" d="M4.221,29.298l-0.104-0.181c-1.608-2.786-2.459-5.969-2.458-9.205 C1.663,9.76,9.926,1.5,20.078,1.5c4.926,0.002,9.553,1.919,13.03,5.399c3.477,3.48,5.392,8.107,5.392,13.028 c-0.005,10.153-8.268,18.414-18.42,18.414c-3.082-0.002-6.126-0.776-8.811-2.24l-0.174-0.096l-9.385,2.46L4.221,29.298z"/><path fill="#788b9c" d="M20.078,2L20.078,2c4.791,0.001,9.293,1.867,12.676,5.253C36.137,10.639,38,15.14,38,19.927 c-0.005,9.878-8.043,17.914-17.927,17.914c-2.991-0.001-5.952-0.755-8.564-2.18l-0.349-0.19l-0.384,0.101l-8.354,2.19 l2.226-8.131l0.11-0.403L4.55,28.867c-1.566-2.711-2.393-5.808-2.391-8.955C2.163,10.036,10.202,2,20.078,2 M20.078,1 C9.651,1,1.163,9.485,1.158,19.912c-0.002,3.333,0.869,6.588,2.525,9.455L1,39.169l10.03-2.63c2.763,1.507,5.875,2.3,9.042,2.302 h0.008c10.427,0,18.915-8.485,18.92-18.914c0-5.054-1.966-9.807-5.538-13.382C29.89,2.971,25.14,1.002,20.078,1L20.078,1z"/><path fill="#79ba7e" d="M19.995,35c-2.504-0.001-4.982-0.632-7.166-1.823l-1.433-0.782l-1.579,0.414l-3.241,0.85l0.83-3.03  l0.453-1.656L7,27.485c-1.309-2.267-2.001-4.858-2-7.492C5.004,11.726,11.732,5.001,19.998,5c4.011,0.001,7.779,1.563,10.61,4.397 C33.441,12.231,35,15.999,35,20.005C34.996,28.273,28.268,35,19.995,35z"/><path fill="#fff" d="M28.28,23.688c-0.45-0.224-2.66-1.313-3.071-1.462c-0.413-0.151-0.712-0.224-1.012,0.224  c-0.3,0.45-1.161,1.462-1.423,1.761c-0.262,0.3-0.524,0.337-0.974,0.113c-0.45-0.224-1.899-0.7-3.615-2.231 c-1.337-1.191-2.239-2.663-2.501-3.113c-0.262-0.45-0.029-0.693,0.197-0.917c0.202-0.202,0.45-0.525,0.674-0.787  c0.224-0.262,0.3-0.45,0.45-0.75c0.151-0.3,0.075-0.563-0.038-0.787c-0.113-0.224-1.012-2.437-1.387-3.336  c-0.364-0.876-0.736-0.757-1.012-0.771c-0.262-0.014-0.562-0.015-0.861-0.015c-0.3,0-0.787,0.113-1.198,0.563 c-0.411,0.45-1.573,1.537-1.573,3.749s1.611,4.35,1.835,4.649c0.224,0.3,3.169,4.839,7.68,6.786  c1.072,0.462,1.911,0.739,2.562,0.947c1.076,0.342,2.057,0.294,2.832,0.178c0.864-0.129,2.66-1.087,3.034-2.136 c0.375-1.049,0.375-1.95,0.262-2.136C29.03,24.025,28.731,23.912,28.28,23.688z"/></svg></a></li>
+              </ul>
+              <ul class="dv_explore_book">
+                  <li><button type="button" (click)="SelectedLocation(item.id)" class="btn btn-default dv_bookappointment_2loc">book now </button></li>
+              </ul>
+              
+            </div>
+          </div>
+          <hr class="dv_bottom_space p-t-3" />
+        </div>
+        
+        <div class="modal bottom fade areusuretxtmodal" id="locationunavailable" tabindex="-1" role="dialog" aria-labelledby="locationunavailable" style="z-index: 99999;">
+          <div class="modal-dialog" role="document" style="height: 340px; border-radius: 25px 25px 0 0; overflow: hidden;">
+            <div class="modal-content dv_viewmobile_filter_content">
+              <div class="modal-header dv_modal_filter_sm_txt_header">
+                <h5 class="modal-title dv_modal_filter_sm_txt">Alert </h5> 
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <svg style="position: absolute; top: 15px; right: 15px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+              </div>
+              <div class="modal-body overflow-auto" style="padding: 15px 15px 80px 15px !important;">
+                <h4 class="dv_alert_heading_location">A few services are not available </h4>
+                <p class="dv_alert_heading_location_p">below mention services are not available to new location </p>
+                <h4 class="dv_alert_heading_location">Price update </h4>
+                <p class="dv_alert_heading_location_p">Price of few items in your cart have been updated. New amount is <strong>AED 899 </strong></p>
+              </div>
+              <div class="modal-footer modal-footer-fixed view_continue_above_modal">
+                <a href="javascript:void(0);" class="dv_okaygotit_btn">Okay Got it </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+  
+  
+    </div>
+  
+  </div>
+  <div class="modal bottom fade" id="openmenu" tabindex="-1" role="dialog" aria-labelledby="openmenu" style="z-index: 99999;">
+    <div class="modal-dialog dv_modal_top_hr" role="document" style="border-radius: 25px 25px 0 0; overflow: hidden;">
+      <div class="modal-content dv_viewmobile_filter_content">
+        <div class="modal-header dv_modal_filter_sm_txt_header">
+          <h5 class="modal-title dv_modal_filter_sm_txt">Account </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <svg style="position: absolute; top: 15px; right: 15px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+        </div>
+        <div class="modal-body overflow-auto" style="padding: 0 15px 80px 15px !important;">
+          <ul class="dv_ac_menu_bottom" *ngIf="IsLogin">
+            <li><a routerLink=/profile" data-dismiss="modal" >Profile </a></li>
+            <li><a routerLink=/my-booking" data-dismiss="modal" >My Bookings </a></li>
+            <li><a href="javascript:void(0);" (click)="loggedOut()" data-dismiss="modal" >Logout </a></li>
+          </ul>
+          <ul class="dv_ac_menu_bottom" *ngIf="!IsLogin">
+            <li><a  href="javascript:void(0);" routerLink=/enter-mobile" data-dismiss="modal" >Login </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  
+<div class="dv_wrapper">
+  <div class="dv_header dv_diffrent_header h-auto border-bottom-0 pt-0" data-toggle="modal" data-target="#dataandslot">
+    <div class="container">
+      <div class="row">
+        <div class="dv_page_heading border-top-0 border-bottom mt-0 dv_height_search">
+          <span style="cursor:pointer;" (click)="Back()"><svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>Choose Location</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="dv_sub_category_page">
+    <span class="dv_nearsalon_txt">Listed all near salons based on your location </span>
+    <ul class="list-style-none m-0 p-0">
+      <li class="position-relative" *ngFor="let item of mainList; index as i" (click)="SelectedLocation(item.id)"><span  *ngIf="currentLocation && currentLocation.id==item.id" >near salon</span><ik-image path="assets/img/location/{{item.image}}" class="dv_categori_icon w-100"></ik-image></li>
+        </ul>
+  </div>
+
+</div>

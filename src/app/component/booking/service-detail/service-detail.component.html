@@ -1,0 +1,193 @@
+<span #h1></span>
+<div class="dv_skelton_load_branches overflow-hidden " *ngIf="IsLoading">
+  <ngx-skeleton-loader [theme]="{ height: '300px', margin: '0 0 10px 0'}" appearance="line"></ngx-skeleton-loader>
+  <ngx-skeleton-loader [theme]="{ height: '15px', width : '50%', margin: '0 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+  <ngx-skeleton-loader [theme]="{ height: '15px', width : '60%', margin: '0 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+  <ngx-skeleton-loader [theme]="{ height: '15px', width : '55%', margin: '0 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+  <ngx-skeleton-loader [theme]="{ height: '30px', width : '18%', position:'absolute', margin: '-15px 0px 10px 61px'}" appearance="line"></ngx-skeleton-loader>
+  <ngx-skeleton-loader [theme]="{ height: '6px', width : '80%', margin: '0px 0 0 15px'}" appearance="line"></ngx-skeleton-loader>
+  <ngx-skeleton-loader [theme]="{ height: '6px', width : '80%', margin: '0px 0 0 15px'}" appearance="line"></ngx-skeleton-loader>
+  <ngx-skeleton-loader [theme]="{ height: '6px', width : '70%', margin: '0px 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+  <ngx-skeleton-loader [theme]="{ height: '15px', width : '40%', margin: '0 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+  <ngx-skeleton-loader [theme]="{ height: '6px', width : '70%', margin: '0px 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+  <ngx-skeleton-loader [theme]="{ height: '6px', width : '70%', margin: '0px 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+  <ngx-skeleton-loader [theme]="{ height: '200px', margin: '0 0 10px 0'}" appearance="line"></ngx-skeleton-loader>
+  <ngx-skeleton-loader [theme]="{ height: '6px', width : '80%', margin: '0px 0 0 15px'}" appearance="line"></ngx-skeleton-loader>
+  <ngx-skeleton-loader [theme]="{ height: '6px', width : '80%', margin: '0px 0 0 15px'}" appearance="line"></ngx-skeleton-loader>
+  <ngx-skeleton-loader [theme]="{ height: '6px', width : '70%', margin: '0px 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+  <ngx-skeleton-loader [theme]="{ height: '15px', width : '40%', margin: '0 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+  <ngx-skeleton-loader [theme]="{ height: '6px', width : '70%', margin: '0px 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+  <ngx-skeleton-loader [theme]="{ height: '6px', width : '70%', margin: '0px 0 10px 15px'}" appearance="line"></ngx-skeleton-loader>
+</div>
+<div class="modal-body overflow-auto"  style="padding: 0 0px 80px 0px !important;"  *ngIf="!IsLoading">
+<div class="dv_sub_cat_banners pt-0"  id="sd-parent">
+  <ik-image path="{{Service.option_image}}" class="dv_sub_cate_banner"></ik-image>
+</div>
+<h5  *ngIf="Service.is_count>1  && !IsLoading && !IsLoading" class="modal-title dv_modal_filter_sm_txt mt-4 mr-3 mb-4 ml-3 font-20"> {{Service.name}}
+  <!-- <div class="dv_subscategory_per_service_rating">
+    <div class="dv_star_fixed_for_all">
+      <svg style=" width: 20px; height: 20px; fill: #99999950; color: #99999950; top: 15px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+    </div>
+    <span>4.7 </span> <strong>145</strong>
+  </div> -->
+</h5>
+<hr  *ngIf="Service.is_count>1  && !IsLoading !IsViewDetailLoading" class="dv_divider">
+<div class="container dv_w_100_desktop" >
+  
+    <div class="dv_subscategory_per_service_wrapper border-0" *ngIf="Service.is_count<=1">
+      <div class="dv_subscategory_per_service_name">
+        {{Service.name}}
+        </div>
+        <!-- <div class="dv_subscategory_per_service_rating">
+          <div class="dv_star_fixed_for_all">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          </div>
+          <span>4.7 </span> <strong>145</strong>
+        </div> -->
+        <ul class="dv_sub_service_rate_ul">
+          <li>AED {{Service.original_price}} </li>
+          <!-- <li>aed {{Service.discount_price+Service.original_price+60}}  </li> -->
+          <li>{{Service.duration}} Min</li>
+        </ul>
+        <ul class="dv_sub_service_descrition_ul"  [innerHTML]="Service.service_content"></ul>
+    
+        <div class="dv_plus_minus_wrap" *ngIf="IsAdded[Service.master_service_id]">
+          <div class="dv_btn_loading_wrap" [ngClass]="{'d-block': isDisable[Service.master_service_id]==true}"><div class="dv_btn_loading"></div></div>
+          <div class="input-group" *ngIf="IsAdded[Service.master_service_id]">
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default btn-number" data-type="minus" (click)="minus(Service.master_service_id,Service.original_price)" data-field="quant[1]" >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                </button>
+            </span>
+            <input type="text" [(ngModel)]="count[Service.master_service_id]" name="quant[1]"  class="form-control input-number" value="{{Service.quantity}}" min="1" max="10">
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default btn-number" (click)="plus(Service.master_service_id,Service.original_price)" data-type="plus" data-field="quant[1]" >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                </button>
+            </span>
+          </div>
+        </div>
+        <span  *ngIf="!IsAdded[Service.master_service_id]">  <button type="button" class="btn btn-default dv_add_package" (click)="AddToCart(Service.master_service_id,1,Service.original_price,Service.discount_price+Service.original_price+60)"> <div class="dv_btn_loading_wrap" [ngClass]="{'d-block': isDisable[Service.master_service_id]==true}"><div class="dv_btn_loading"></div></div>add </button></span>  
+    </div>
+    <div class="dv_option_services pl-0 pr-0"  *ngIf="Service.is_count>1 && !IsLoading">
+      <div *ngFor="let item of optionList; index as i">
+      <div class="dv_subscategory_per_service_wrapper border-0"    >
+        <div *ngIf="item.hair_size_image!=null" class="dv_service_gallery_slider">
+          <!-- <img  (error) ="onImgError($event)" src="{{item.hair_size_image}}" alt="" title="{{item.name}}">  -->
+          <ik-image path="{{item.hair_size_image}}"></ik-image>
+
+        </div>
+        <div class="dv_service_tag" *ngIf="item.class_type!=null" [ngClass]="{'green': item.class_type=='Regular','goldtag': item.class_type=='Premium'}">{{item.class_type}} </div>
+        <div class="dv_subscategory_per_service_name mt-0">
+          {{item.name}}
+          </div>
+          <!-- <div class="dv_subscategory_per_service_rating">
+            <div class="dv_star_fixed_for_all">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </div>
+            <span>4.7 </span> <strong>145</strong>
+          </div> -->
+          <ul class="dv_sub_service_rate_ul">
+            <li>AED {{item.original_price}} </li>
+            <!-- <li>aed {{item.discount_price+item.original_price+60}}  </li> -->
+            <li>{{item.duration}} Min</li>
+          </ul> 
+          <ul class="dv_sub_service_descrition_ul" [innerHTML]="item.service_content">
+             </ul>
+             <div class="dv_plus_minus_wrap" [ngClass]="{'top-0':item.hair_size_image==null}">
+              <div class="dv_btn_loading_wrap" [ngClass]="{'d-block': isDisable[item.master_service_id]==true}"><div class="dv_btn_loading"></div></div>
+              <div class="input-group" *ngIf="IsAdded[item.master_service_id] && count[item.master_service_id]">
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default btn-number" data-type="minus" (click)="minusOption(item.master_service_id,item.amount)" data-field="quant[1]" >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    </button>
+                </span>
+                <input type="text" [(ngModel)]="count[item.master_service_id]" name="quant[1]"  class="form-control input-number" value="{{item.quantity}}" min="1" max="10">
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default btn-number" (click)="plusOption(item.master_service_id,item.amount,item.discount_price+item.original_price+60)" data-type="plus" data-field="quant[1]" >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    </button>
+                </span>
+              </div>
+            </div>
+            <span  *ngIf="!IsAdded[item.master_service_id] ||  !count[item.master_service_id]">  <button [ngClass]="{'top-0 mt-0':item.hair_size_image==null}" type="button" class="btn btn-default dv_add_package" (click)="AddToCartOption(item.master_service_id,1,item.original_price,item.discount_price+item.original_price+60,item.name)"> <div class="dv_btn_loading_wrap" [ngClass]="{'d-block': isDisable[item.master_service_id]==true}"><div class="dv_btn_loading"></div></div>add </button></span>
+
+      
+      </div>
+      <hr class="dv_divider">
+    </div>
+  </div>
+    <div class="dv_page_details_points_ul_head"  *ngIf="Service.service_benefits">
+      <h4>Benefits  </h4>
+      <ul class="dv_page_details_points" [innerHTML]="Service.service_benefits">
+       
+      </ul>
+    </div>
+    <div class="row" *ngIf="optionList.length>0">
+      
+     <span *ngIf="optionList[0].essential_oils!='' && optionList[0].essential_oils!=null"><ik-image path="/{{optionList[0].essential_oils}}" class="w-100"></ik-image></span> 
+    </div>
+    <div class="row"  *ngIf="Service.recommended">
+      <div class="dv_recommended_for">
+        <h4>Recommended for </h4>
+        <ul class="dv_page_details_points" [innerHTML]="Service.recommended">
+           </ul>
+      </div>
+    </div>
+   
+    <div class="dv_page_details_points_ul_head" *ngIf="Service.service_procedure">
+      <h4>Process  </h4>
+      <ul class="dv_page_details_points bulletnumber" [innerHTML]="Service.service_procedure">
+     
+      </ul>
+    </div>
+    
+    <div class="dv_after_care" *ngIf="Service.after_image!='' && Service.after_image!==null">
+      <p>expert recommended</p>
+      <h3>after care</h3>
+     <div class="dv_after_care p-0 bg-transparent" [innerHTML]="Service.after_image"></div>
+    </div>
+    <div class="dv_page_details_points_ul_head" *ngIf="faqList.length>0">
+      <h4>Frequently Asked Questions  </h4>
+      <div class="accordion" id="accordionExample">
+      
+        <div class="card"   *ngFor="let item of faqList; index as i">
+          <div class="card-header dv_freqntly_question" id="heading{{i}}" data-toggle="collapse" attr.data-target="#collapse{{i}}" aria-expanded="false" attr.aria-controls="collapse{{i}}">
+             {{item.service_question}}
+          </div>
+          <div id="collapse{{i}}" class="collapse" attr.aria-labelledby="heading{{i}}" data-parent="#accordionExample">
+            <div class="card-body dv_freqntly_answer">
+              {{item.service_answer}}
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+    <!-- <div class="dv_page_details_points_ul_head">
+      <h4>Why Mirrors ? </h4>
+      <ul class="dv_why_mirrors_scroll">
+        <li    *ngFor="let item of whyList; index as i"><ik-image path="{{item.image}}" class="rounded"></ik-image></li>
+     
+      </ul>
+    </div> -->
+
+    
+  </div>
+  
+  </div>
+  <div class="dv_footer view_continue_above_modal" style="height: 65px;" *ngIf="IsOptionFooterShow && Service.is_count>1 && !IsLoading">
+    <div class="container dv_w_100_desktop" >
+      <button type="button"  class="btn btn-default dv_cancel_booking" style="text-align: left;color: #000000; font-weight: 700; border: none;line-height: 30px;"><span style=" background: #ebebeb; display: block; width: 25px; text-align: center; border-radius: 5px; font-size: 12px; padding: 0; float: left; margin: 0 15px 0 0; ">{{totalOption}}</span> AED {{totalAmtOption}} </button>
+      <button type="button" (click)="UpdateOption(optionList[0].sub_category_id)"  data-dismiss="modal"  class="btn btn-default dv_reschedule_booking proceed">Done </button>
+    
+    </div>
+      <!-- <div class="container">
+        <button type="button" class="btn btn-default dv_cancel_booking" style="border-color:#999; color:#999;">{{totalOption}} Added </button>
+        <button type="button"  (click)="UpdateOption(optionList[0].sub_category_id)"  data-dismiss="modal" class="btn btn-default dv_reschedule_booking proceed">Done </button>
+      </div> -->
+    </div> 
+    <div class="modal-footer modal-footer-fixed view_continue_above_modal"  *ngIf="IsSingle && Service.is_count<=1 && !IsLoading">
+      <a href="javascript:void(0);"  (click)="UpdateOption(Service.sub_category_id)"  data-dismiss="modal"  class="dv_fullwidth_btn active">Done </a>
+    </div>
+  

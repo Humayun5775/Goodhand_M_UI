@@ -1,0 +1,37 @@
+<div class="dv_wrapper">
+  <!-- <app-header></app-header>
+<div class="dv_content"> -->
+  <app-header-top></app-header-top>
+  <div class="dv_sub_category_page">
+      <div class="dv_subscategory_wrapper">
+        <div class="container">
+          <h4 class="dv_subscategory_heading">Total {{count}} saved address </h4>
+          <a routerLink="new-address" class="dv_add_another_address">add another address </a>
+          <div class="dv_saved_address_list">
+            <div class="form-check" *ngFor="let item of mainList; index as i">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input"  (click)="SetDefaultAdd(item.id)" name="optradio">
+                <div class="dv_saved_address_wrap">
+                  <span>{{item.address_type}} </span>
+                  <p>{{item.address}} </p>
+                </div>
+              </label>
+              <ul class="dv_save_address_delete_edit_ul">
+                <li><a href="javascript:void(0);" (click)="Edit(item.id)">edit </a></li>
+                <li><a href="javascript:void(0);"  (click)="Delete(item.id)">delete </a></li>
+              </ul>
+            </div>
+           
+          </div>
+  
+        </div>
+      </div>
+      <hr class="dv_bottom_space p-t-3" />
+    </div>
+    
+    <div class="dv_footer view_continue_above_modal" *ngIf="count>0">
+      <div class="container">
+        <a href="javascript:void(0);" (click)="Continue()" class="dv_continue_with">continue </a>
+      </div>
+    </div>
+  </div>

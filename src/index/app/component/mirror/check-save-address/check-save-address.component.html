@@ -1,0 +1,88 @@
+<div *ngIf="!IsLoggedIn"><app-login></app-login></div>
+<input type="button" hidden #btnselectaddresss  data-toggle="modal" data-target="#selectaddresss" />
+<input type="button" hidden #btnaddnewaddressmap  data-toggle="modal" data-target="#addnewaddressmap" />
+<input type="button" hidden #btndataandslot  data-toggle="modal" data-target="#dataandslot" />
+<input type="button" hidden #btnareyousure  data-toggle="modal" data-target="#areyousure" />
+
+<div class="dv_wrapper">
+    <div class="dv_header dv_diffrent_header h-auto border-bottom-0 pt-0" data-toggle="modal" data-target="#servicereview">
+      <div class="container dv_desktop_sm_width">
+        <div class="row">
+          <div class="dv_page_heading border-top-0 border-bottom mt-0 dv_height_search">
+              <span style="cursor: pointer;" backButton><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg> Account </span>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="dv_sub_category_page">
+      <div class="container dv_desktop_sm_width">
+        <div class="dv_subcategry_page_account pt-5 pb-5">
+          <h4>Where can I check my saved address?</h4>
+          <p>Here are the two ways to check your address:</p>
+          <ul class="dv_ulli_numbers m-0 p-0 pl-4">
+            <li class="mb-3 text-secondary">
+              While selecting the location on the app screen
+            </li>
+            <li class="mb-3 text-secondary">
+              Before making payment in the checkout section
+            </li>
+          </ul>
+          <a href="javascript:void()" (click)="OpenModel()">Also, you can check your registered address here <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+        </div>
+        <!-- <img src="img/change-phone.jpg" class="w-100"> -->
+        <hr class="dv_divider">
+        <div class="dv_was_article_helpful">
+          Was this article helpful?
+  
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-thumbs-up"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-thumbs-down"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"></path></svg> 
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<div class="modal bottom fade" id="addnewaddressmap" tabindex="-1" role="dialog" aria-labelledby="addnewaddressmap" style="z-index: 99999;">
+  <svg class="display-mobile" data-dismiss="modal" style="opacity:1; position: absolute; top: 35px; width: 35px; right: 15px; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.87 14.87"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:none;stroke:#565656;stroke-linecap:round;stroke-linejoin:round;stroke-width:.86px;}</style></defs><circle class="cls-1" cx="7.43" cy="7.43" r="7.43"></circle><g><line class="cls-2" x1="10.02" y1="4.85" x2="4.85" y2="10.02"></line><line class="cls-2" x1="4.85" y1="4.85" x2="10.02" y2="10.02"></line></g></svg>
+  <button hidden type="button" #btnCloseSaveAddress class="close" data-dismiss="modal" aria-label="Close"></button>
+  <div class="modal-dialog dv_modal_desktop_mobile border-bottom-radius dv_modal_top_hr" role="document" style="border-radius: 25px 25px 0 0; overflow: hidden;">
+    <div class="modal-content dv_viewmobile_filter_content">
+      <div class="modal-body overflow-auto" style="padding: 0 0 40px 0 !important;">
+       <app-popup-save-address  [someInput]="EditaddressId"  (getReload)='GetAddressList($event)'></app-popup-save-address>
+        <hr class="dv_bottom_space p-t-3" />
+
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="modal bottom fade" id="selectaddresss" tabindex="-1" role="dialog" aria-labelledby="selectaddresss" style="z-index: 99999;">
+  <svg class="display-mobile" data-dismiss="modal" style="opacity:1; position: absolute; top: 35px; width: 35px; right: 15px; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.87 14.87"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:none;stroke:#565656;stroke-linecap:round;stroke-linejoin:round;stroke-width:.86px;}</style></defs><circle class="cls-1" cx="7.43" cy="7.43" r="7.43"></circle><g><line class="cls-2" x1="10.02" y1="4.85" x2="4.85" y2="10.02"></line><line class="cls-2" x1="4.85" y1="4.85" x2="10.02" y2="10.02"></line></g></svg>
+  <button hidden type="button" #btnCloseSelectaddresss class="close" data-dismiss="modal" aria-label="Close"></button>
+  <div class="modal-dialog dv_modal_desktop_mobile border-bottom-radius dv_modal_top_hr" role="document" style="border-radius: 25px 25px 0 0; overflow: hidden;">
+    <div class="modal-content dv_viewmobile_filter_content">
+      <div class="modal-header dv_modal_filter_sm_txt_header">
+        <h5 class="modal-title dv_modal_filter_sm_txt">Saved address </h5>
+        <img _ngcontent-xcm-c90="" src="assets/img/cancel-img.png" data-dismiss="modal" class="display-desktop cursor-pointer" style="position: absolute; right: 15px; top: 12px; z-index: 1;">
+        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <svg style="position: absolute; top: 15px; right: 15px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button> -->
+      </div>
+      <div class="modal-body overflow-auto" style="padding: 0 0 80px 0 !important; height: 450px;">
+        <div class="dv_subscategory_wrapper">
+          <div class="container w-100">
+            <!-- <h4 class="dv_subscategory_heading">Total 4 saved address </h4> -->
+            <!-- <a href="javascript:void(0)"  data-dismiss="modal" (click)="AddNewAddress()"  class="dv_add_another_address"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg> add another address </a> -->
+         
+     <app-popup-add-address [someInput]="addressId" (IsEdit)='IsEdit($event)' (IsDelete)='IsDelete($event)' (DefaultAddress)='selectAddressCount($event)'></app-popup-add-address>
+
+    </div>
+  </div>
+        <hr class="dv_bottom_space p-t-3" />
+
+      </div>
+      <!-- <div class="modal-footer modal-footer-fixed view_continue_above_modal">
+        <a href="javascript:void(0);" (click)="AddressContinue()" [ngClass]="{'active':addressId>0}" class="dv_fullwidth_btn  height-50">Continue </a>
+      </div> -->
+    </div>
+  </div>
+</div>

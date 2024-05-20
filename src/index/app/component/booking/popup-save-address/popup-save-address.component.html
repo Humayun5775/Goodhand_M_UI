@@ -1,0 +1,72 @@
+<div class="dv_subscategory_wrapper ">
+    <div class="position-relative">
+        <div class="dv_location_for_all">
+            <agm-map [latitude]="latitude" [longitude]="longitude"  class="dv_location_for_all" [zoom]="15">
+              <agm-marker [latitude]="latitude" [longitude]="longitude" [markerDraggable]="true"   (dragEnd)="markerDragEnd(marker, $event)"></agm-marker>
+            </agm-map>
+          </div>
+      <!-- <div class="dv_loading_search"></div> -->
+      <svg style=" position: absolute; width: 40px; height: 40px; bottom: 40px; background: #ffffff; padding: 10px; border-radius: 50%; left: 15px; " width="100%" height="100%" viewBox="0 0 20 20" fill="" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.063 3.504V5h1.874V3.504a6.567 6.567 0 015.559 5.559H15v1.874h1.496a6.567 6.567 0 01-5.558 5.559V15H9.062v1.496a6.567 6.567 0 01-5.558-5.558H5V9.062H3.504a6.567 6.567 0 015.559-5.558zm0-1.89a8.44 8.44 0 00-7.449 7.449H0v1.874h1.614a8.44 8.44 0 007.449 7.449V20h1.874v-1.614a8.44 8.44 0 007.449-7.448H20V9.062h-1.614a8.44 8.44 0 00-7.448-7.448V0H9.062v1.614zM10 8.438a1.563 1.563 0 100 3.125 1.563 1.563 0 000-3.126zM6.562 10a3.437 3.437 0 116.875 0 3.437 3.437 0 01-6.874 0z" fill="#0F0F0F"></path></svg>
+    </div>
+    <div class="container w-100">
+      <div class="dv_address_changing">
+        <span>{{currentAddress}}</span>
+        <a href="javascript:void()">change</a>
+      </div>
+
+    
+      
+      <span class="d-block mb-3">
+        <!-- error-border -->
+        <input type="text" class="form-control dv_enter_location_inputs mb-0 rounded" [ngClass]="{'error-border':data.p_name=='' && !isValid}"  placeholder="Full Name" [(ngModel)]="data.p_name" name="">
+        <span *ngIf="data.p_name==''  && !isValid" class="text-danger font-12 text-capitalize">name required</span>
+      </span>
+      <span class="d-block mb-3">
+        <!-- error-border -->
+        <input type="text" class="form-control dv_enter_location_inputs mb-0 rounded" [ngClass]="{'error-border':data.House_Number=='' && !isValid}" placeholder="House Number" [(ngModel)]="data.House_Number" name="">
+        <span *ngIf="data.House_Number=='' && !isValid" class="text-danger font-12 text-capitalize">house no. required</span>
+      </span>
+      <span class="d-block mb-3">
+        <!-- error-border -->
+        <input type="text" class="form-control dv_enter_location_inputs mb-0 rounded" [ngClass]="{'error-border':data.Building==''  && !isValid}" placeholder="Building Name" [(ngModel)]="data.Building" name="">
+        <span *ngIf="data.Building==''  && !isValid" class="text-danger font-12 text-capitalize">Building required</span>
+      </span>
+      <span class="d-block mb-3">
+        <!-- error-border -->
+        <input type="text" class="form-control dv_enter_location_inputs mb-0 rounded" [ngClass]="{'error-border':data.Street==''  && !isValid}"  placeholder="Street Name" [(ngModel)]="data.Street" >
+        <!-- <span *ngIf="data.Street==''" class="text-danger font-12 text-capitalize">Street required</span> -->
+      </span>
+     
+      <span class="d-block mb-3">
+        <!-- error-border -->
+        <input type="text" class="form-control dv_enter_location_inputs mb-0 rounded"   placeholder="Landmark" [(ngModel)]="data.Landmark" name="">
+       </span>
+       <input type="hidden"  [(ngModel)]="data.p_id"  />
+          <input type="hidden" class="p_lat" [(ngModel)]="data.p_lat"  />
+          <input type="hidden" class="p_lng"  [(ngModel)]="data.p_lng" />
+      <select class="form-control dv_enter_location_inputs" >
+        <option value="Dubai">Dubai</option>
+        <option value="Sharjah">Sharjah</option>
+        <option value="Abu Dhabi">Abu Dhabi</option>
+      </select>
+      <div class="btn-group mb-2 dv_group_btn_tip_professional" data-toggle="buttons">
+        <label class="btn btn-primary dv_lbl_btn_tip_professional"  [ngClass]="{'active': data.p_address_type=='home'}">
+          <input type="radio" name="options" id="option1" (click)="getAddressType('home')"> Home
+        </label>
+        <label class="btn btn-primary dv_lbl_btn_tip_professional" [ngClass]="{'active': data.p_address_type=='office'}">
+          <input type="radio" name="options" id="option2" (click)="getAddressType('office')"> Office
+        </label>
+        <label class="btn btn-primary dv_lbl_btn_tip_professional" [ngClass]="{'active': data.p_address_type=='others'}">
+          <input type="radio" name="options" id="option3" (click)="getAddressType('other')"> Others
+        </label>
+      </div>
+
+     
+
+    </div>
+  </div>
+  <div class="dv_footer view_continue_above_modal">
+    <div class="container w-100">
+      <a href="javascript:void(0);" (click)="SaveCustomerAddress(data)" class="dv_continue_with active">save & continue </a>
+    </div>
+  </div>

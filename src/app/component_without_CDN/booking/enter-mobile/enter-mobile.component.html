@@ -1,0 +1,31 @@
+<div class="dv_wrapper">
+  <!-- <app-header></app-header>
+<div class="dv_content"> -->
+  <app-header-top></app-header-top>
+  <div class="dv_sub_category_page">
+    <div class="dv_subscategory_wrapper">
+      <div class="container">
+        <h4 class="dv_subscategory_heading">Enter Mobile No </h4>
+        <div class="dv_mobile_otp_wrap">
+          <div class="input-group mb-3 mt-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">+971 </span>
+            </div>
+            <input type="tel" #mobileNo  class="form-control dv_enter_mobile_no" placeholder="** *** ****">
+          </div>
+        </div>
+      </div>
+      <hr class="dv_bottom_space p-t-3">
+      <p class="ml-3 mt-3 dv_sm_para">System will send you the OTP on same number to login </p>
+    </div>
+    <!-- <hr class="dv_bottom_space p-t-3" /> -->
+
+
+  </div>
+  
+  <div class="dv_footer view_continue_above_modal">
+    <div class="container">
+      <a href="javascript:void(0);" (click)="SendSMS(mobileNo.value)" class="dv_continue_with">Send OTP </a>
+    </div>
+  </div>
+</div>

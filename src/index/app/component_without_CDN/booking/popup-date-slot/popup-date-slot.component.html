@@ -1,0 +1,47 @@
+<div class="dv_subscategory_wrapper">
+    <div class="container">
+      <div class="dv_date_slot_wrapper">
+        <div class="dv_slot_txt">
+          Select date of service
+          <span>Your service will take approx. 4 hrs 40 mins</span>
+        </div>
+        <div class="swiper-dateslot mb-3">
+          <div class="swiper-wrapper">
+            
+            <swiper    [config]="config" class="swiper-slide">
+                <ng-template swiperSlide *ngFor="let item of slotDate; index as i">
+                  <button type="button" class="btn btn-default dv_select_date_slot" [ngClass]="{'selected': selectedSlotDate==item}" (click)="getSlotDate(item,0)">{{item | date: 'MMM'}} <span>{{item | date: 'dd'}}</span></button>
+               </ng-template>
+              </swiper>
+            
+          </div>
+        </div>
+      </div>
+      <div class="dv_slot_free_cancel_txt">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> Cancellation charges are not applicable is cancelled before 4 hours
+        </div>
+      <div class="dv_time_slot_wrapperm">
+        <div class="dv_slot_txt">
+          Select start time of service
+        </div>
+        <div class="row mt-3">
+          <div class="col-md-4 col-sm-4 col-xs-4 col-4"   *ngFor="let item of slotTime; index as i">
+            <button type="button" class="btn btn-default dv_select_time_slot" [ngClass]="{'selected': selectedTime==item}"  (click)="getSlotTime(item)">{{item=="00:00PM"?"12:00PM":item=="00:00AM"?"12:A0PM":item=="00:30PM"?"12:30PM":item=="00:30AM"?"12:30AM":item}}</button>                
+          </div>
+         
+
+        </div>
+      </div>
+      
+    
+    </div>
+  </div>
+
+  <div class="dv_footer view_continue_above_modal" *ngIf="isCheckout">
+    <div class="container">
+      <a href="javascript:void(0);" data-dismiss="modal" (click)="Checkout()"  class="dv_continue_with active">Confirm </a>
+      <div class="dv_terms_condition_fixed">
+        By proceeding, you agree to our <a href="#!">T&amp;C</a>, <a href="#!">Privacy</a> &amp; <a href="#!">Cancellation Policy</a>
+      </div>  
+    </div>
+  </div>

@@ -1,0 +1,32 @@
+<div class="modal bottom fade areusuretxtmodal" id="profile" tabindex="-1" role="dialog" aria-labelledby="profle" style="z-index: 99999;" data-backdrop="static" data-keyboard="false">
+  <svg   class="display-mobile"  data-dismiss="modal" style=" position: absolute; bottom: 460px; width: 30px; right: 15px; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.87 14.87"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:none;stroke:#565656;stroke-linecap:round;stroke-linejoin:round;stroke-width:.86px;}</style></defs><circle class="cls-1" cx="7.43" cy="7.43" r="7.43"></circle><g><line class="cls-2" x1="10.02" y1="4.85" x2="4.85" y2="10.02"></line><line class="cls-2" x1="4.85" y1="4.85" x2="10.02" y2="10.02"></line></g></svg>
+  <div   class="modal-dialog border-bottom-radius dv_modal_top_hr dv_date_time_desktop"    role="document" style="height: 450px; border-radius: 15px 25px 0 0; overflow: hidden;">
+    <div class="modal-content dv_viewmobile_filter_content">
+      <div class="modal-header dv_modal_filter_sm_txt_header">
+        <h5 class="modal-title dv_modal_filter_sm_txt">Profile </h5> 
+        <img src="assets/img/cancel-img.png" (click)="GetProfile()" data-dismiss="modal" class="display-desktop cursor-pointer" style=" position: fixed; right: 15px; top: 12px; ">
+     <button hidden #btnClose data-dismiss="modal"></button>
+      </div>
+      <div class="modal-body overflow-auto" style="padding: 15px 15px 80px 15px !important;">
+         <div class="form-group">
+          <label class="dv_profile_lbl font-12">Customer Name </label>
+          <input type="text" class="form-control dv_profile_input height-50" [(ngModel)]="data.name" placeholder="Enter Name">
+          <span *ngIf="data.name==''" class="text-danger font-10 d-block mt-1">Enter Name</span>
+        </div>
+         <div class="form-group">
+          <label class="dv_profile_lbl font-12">Customer Mobile No </label>
+          <input type="text" class="form-control dv_profile_input height-50"  [(ngModel)]="data.phone" >
+          <span *ngIf="data.phone==''" class="text-danger font-10 d-block mt-1">Enter Mobile No.</span>
+        </div>
+         <div class="form-group">
+          <label class="dv_profile_lbl font-12">Customer Email ID </label>
+          <input type="text" class="form-control dv_profile_input height-50 text-lowercase"  [(ngModel)]="data.email">
+          <span *ngIf="data.email==''" class="text-danger  font-10 d-block mt-1">Enter Email.</span>
+       </div>
+      </div>
+      <div class="modal-footer modal-footer-fixed view_continue_above_modal">
+        <a href="javascript:void(0);" (click)="Save()" class="dv_fullwidth_btn active height-50"><span *ngIf="!loading">Save Profile </span><div *ngIf="loading" class="buttonloader" ><div></div><div></div><div></div><div></div></div> </a> <!-- active -->
+      </div>
+    </div>
+  </div>
+</div>

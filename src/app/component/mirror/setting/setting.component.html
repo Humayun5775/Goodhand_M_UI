@@ -1,0 +1,137 @@
+<input type="button" hidden #btnareyousure  data-toggle="modal" data-target="#areyousure" />
+<input type="button" hidden #btninvalidotp  data-toggle="modal" data-target="#invalidotp" />
+<input type="button" hidden #btnLogin  data-toggle="modal" data-target="#mobilelogin" />
+<div class="dv_wrapper">
+    <div class="dv_header dv_diffrent_header h-auto border-bottom-0 pt-0" data-toggle="modal" data-target="#servicereview">
+      <div class="container dv_desktop_sm_width">
+        <div class="row">
+          <div class="dv_page_heading border-top-0 border-bottom mt-0 dv_height_search">
+            <span  style="cursor: pointer;" backButton>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg> Setting
+              </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="dv_sub_category_page">
+      <div class="container dv_desktop_sm_width">
+        <ul class="dv_setting_ul">
+          <li>
+            <img src="assets/img/whatsapp.png"> update on whatsapp
+            <label class="form-switch" style="margin: 0;position: relative;top: 0;">
+              <input id="location" type="checkbox" (change)="UdateSetting()" [(ngModel)]="data.is_whatsapp_update" [attr.checked]="data.is_whatsapp_update=='1' ? '' : null">
+              <i></i>
+            </label>
+          </li>
+          <li>
+            <img src="assets/img/promotion.png">
+            Promotional messages
+            <label class="form-switch" style="margin: 0;position: relative;top: 0;">
+              <input id="location" type="checkbox" (change)="UdateSetting()"  [(ngModel)]="data.is_sms_update" [attr.checked]="data.is_sms_update=='1' ? '' : null">
+              <i></i>
+            </label>
+          </li>
+          <li>
+            <img src="assets/img/promotion-email.png">
+            Promotional Emails
+            <label class="form-switch" style="margin: 0;position: relative;top: 0;">
+              <input id="location" type="checkbox" (change)="UdateSetting()"  [(ngModel)]="data.is_email_update"  [attr.checked]="data.is_email_update=='1' ? '' : null">
+              <i></i>
+            </label>
+          </li>
+          <li  data-toggle="modal" data-target="#areyousure" >
+            <img src="assets/img/delete-ac.png">
+            Delete Account
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+<div class="modal bottom fade areusuretxtmodal" id="areyousure" tabindex="-1" role="dialog" aria-labelledby="areyousure" style="z-index: 99999;" data-backdrop="static" data-keyboard="false">
+  <svg class="display-mobile"  data-dismiss="modal" style="position: absolute;bottom: 322px;right: 15px;background: #ffffff;border-radius: 50%;padding: 5px;width: 35px;height: 35px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+  <div class="modal-dialog border-bottom-radius dv_modal_top_hr dv_date_time_desktop"  role="document" style="z-index: 1; height: 300px; border-radius: 25px 25px 0 0; overflow: hidden;">
+    <div class="modal-content dv_viewmobile_filter_content">
+      <div class="modal-header dv_modal_filter_sm_txt_header">
+        <img src="assets/img/cancel-img.png" data-dismiss="modal" class="display-desktop cursor-pointer" style="position: absolute; right: 15px; top: 12px; z-index: 1;">
+        <h5 class="modal-title dv_modal_filter_sm_txt">Delete Account </h5>
+      </div>
+      <div class="modal-body overflow-auto" style="padding: 25px 15px 80px 15px !important;">
+        <svg style=" width: 50px; margin: 0 auto 15px auto; display: block; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82.54 82.54"><circle style="fill:#ffebeb;" cx="41.27" cy="41.27" r="41.27"/><g><polyline style="fill:none;stroke:red;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.65px;" points="26.52 31.44 29.8 31.44 56.01 31.44"/><path style="fill:none;stroke:red;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.65px;" d="M52.74,31.44v22.94c0,1.81-1.47,3.28-3.28,3.28h-16.38c-1.81,0-3.28-1.47-3.28-3.28V31.44m4.91,0v-3.28c0-1.81,1.47-3.28,3.28-3.28h6.55c1.81,0,3.28,1.47,3.28,3.28v3.28"/><line style="fill:none;stroke:red;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.65px;" x1="37.99" y1="39.63" x2="37.99" y2="49.46"/><line style="fill:none;stroke:red;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.65px;" x1="44.54" y1="39.63" x2="44.54" y2="49.46"/></g></svg>
+        <h3 style="text-align: center; font-family: 'OpenSauceOneBold'; font-size: 14px; margin: 0 0 10px 0; ">are you sure you want to delete account ? </h3>
+        <p style="text-align: center; font-family: 'OpenSauceOneRegular'; font-size: 12px; margin: 0 0 10px 0; ">You will received OTP via your register number.</p>
+      </div>
+      <div class="modal-footer modal-footer-fixed view_continue_above_modal">
+        <a href="javascript:void(0);"  data-dismiss="modal"  class="dv_fullwidth_btn height-50" style=" width: 45%; display: inline-block; float: left; margin: 0 15px 0 0; color: #999999; ">No </a> <!-- active -->
+        <a href="javascript:void(0);"   data-toggle="modal" data-target="#mobilelogin"    (click)="SendSMS()"  class="dv_fullwidth_btn active height-50" style=" width: 47%; display: inline-block; float: right;">proceed </a>
+      </div>
+    </div>
+  </div>
+</div>
+  
+<div class="modal bottom fade areusuretxtmodal" id="invalidotp" tabindex="-1" role="dialog" aria-labelledby="invalidotp" style="z-index: 99999;" data-backdrop="static" data-keyboard="false">
+  <svg data-dismiss="modal"  (click)="clearOTP()"  data-dismiss="modal" style="z-index:1; opacity:1; position: absolute; bottom : 270px; width: 35px; right: 15px; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.87 14.87"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:none;stroke:#565656;stroke-linecap:round;stroke-linejoin:round;stroke-width:.86px;}</style></defs><circle class="cls-1" cx="7.43" cy="7.43" r="7.43"></circle><g><line class="cls-2" x1="10.02" y1="4.85" x2="4.85" y2="10.02"></line><line class="cls-2" x1="4.85" y1="4.85" x2="10.02" y2="10.02"></line></g></svg>
+  <div class="modal-dialog" role="document" style="height: 250px; z-index:1; border-radius: 15px 25px 0 0; overflow: hidden;">
+    <div class="modal-content dv_viewmobile_filter_content">
+      <div class="modal-header dv_modal_filter_sm_txt_header">
+        <h5 class="modal-title dv_modal_filter_sm_txt">In valid OTP </h5> 
+        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <svg style="position: absolute; top: 15px; right: 15px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button> -->
+      </div>
+      <div class="modal-body overflow-auto" style="padding: 15px !important;">
+       
+         <div class="dv_coupon_noexist_wrap">
+          <img src="./assets/img/wrong-otp.png" class="dv_coupon_noexist">
+          <span>In valid OTP</span>
+        </div>
+      </div>
+      <div class="modal-footer modal-footer-fixed view_continue_above_modal">
+        <a href="javascript:void(0);"  (click)="clearOTP()" data-dismiss="modal" class="dv_fullwidth_btn active">Okay got it </a>
+      </div>
+    </div>
+  </div>
+</div>
+   
+<div class="modal bottom fade areusuretxtmodal" id="mobilelogin" tabindex="-1" role="dialog" aria-labelledby="mobilelogin" style="z-index: 99999;" data-backdrop="static" data-keyboard="false">
+  <svg  *ngIf="!IsOTP" class="display-mobile" data-dismiss="modal" style="opacity:1; position: absolute; bottom: 320px; width: 35px; right: 15px; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.87 14.87"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:none;stroke:#565656;stroke-linecap:round;stroke-linejoin:round;stroke-width:.86px;}</style></defs><circle class="cls-1" cx="7.43" cy="7.43" r="7.43"></circle><g><line class="cls-2" x1="10.02" y1="4.85" x2="4.85" y2="10.02"></line><line class="cls-2" x1="4.85" y1="4.85" x2="10.02" y2="10.02"></line></g></svg>
+ 
+  <svg  *ngIf="IsOTP" class="display-mobile" (click)="clearIsOTP()"  data-dismiss="modal" style="opacity:1; position: absolute; bottom: 350px; width: 35px; right: 15px; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.87 14.87"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:none;stroke:#565656;stroke-linecap:round;stroke-linejoin:round;stroke-width:.86px;}</style></defs><circle class="cls-1" cx="7.43" cy="7.43" r="7.43"></circle><g><line class="cls-2" x1="10.02" y1="4.85" x2="4.85" y2="10.02"></line><line class="cls-2" x1="4.85" y1="4.85" x2="10.02" y2="10.02"></line></g></svg>
+ 
+  <div *ngIf="IsOTP"  class="modal-dialog border-bottom-radius dv_modal_top_hr dv_date_time_desktop" role="document" style="height: 320px; border-radius: 15px 25px 0 0; overflow: hidden;">
+    <svg  (click)="clearIsOTP()" class="display-mobile" data-dismiss="modal" style="opacity:1; position: absolute; bottom: 420px; width: 35px; right: 15px; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.87 14.87"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:none;stroke:#565656;stroke-linecap:round;stroke-linejoin:round;stroke-width:.86px;}</style></defs><circle class="cls-1" cx="7.43" cy="7.43" r="7.43"></circle><g><line class="cls-2" x1="10.02" y1="4.85" x2="4.85" y2="10.02"></line><line class="cls-2" x1="4.85" y1="4.85" x2="10.02" y2="10.02"></line></g></svg>
+    <div class="modal-content dv_viewmobile_filter_content">
+      <div class="modal-header dv_modal_filter_sm_txt_header">
+        <img data-dismiss="modal" src="assets/img/cancel-img.png" class="display-desktop cursor-pointer" style="position: absolute; right: 15px; top: 12px; z-index: 1;">
+        
+        <h5 class="modal-title dv_modal_filter_sm_txt">Verification Code </h5> 
+        <button hidden type="button" #btnClose class="close" data-dismiss="modal" aria-label="Close">
+           </button>  
+      </div>
+      <div class="modal-body overflow-auto" style="padding: 25px 15px 80px 15px !important;">
+        
+        <div class="row">
+          <div class="col-md-8 col-sm-8 col-xs-8 col-8">
+            <div class="dv_wehave_sent_txt">we have sent you 4 digit code on {{otpDetail.mobile}}</div>
+          </div>
+          <div class="col-md-4 col-sm-4 col-xs-4 col-4">
+            </div>
+        </div>
+        <div class="dv_4digit_code_inputs mb-2">
+          <!-- <input type="tel" name="" class="form-control dv_verification_code">
+          <input type="tel" name="" class="form-control dv_verification_code">
+          <input type="tel" name="" class="form-control dv_verification_code">
+          <input type="tel" name="" class="form-control dv_verification_code"> -->
+          <ng-otp-input  class=" dv_verification_code"  (onInputChange)="DeleteAccount($event)"  [config]="{length:4,allowNumbersOnly:true}"></ng-otp-input>
+        </div>
+        <strong  *ngIf="!IsResendOTP" class="dv_remain_count">00:{{this.timeLeft}} </strong>
+        <strong   *ngIf="IsResendOTP" class="dv_remain_count">    <a href="javascript:void(0)" (click)="ResendOTP()">Resend</a> </strong>
+
+      </div>
+      <div class="modal-footer modal-footer-fixed view_continue_above_modal">
+        <a href="javascript:void(0);" class="dv_fullwidth_btn" [ngClass]="{'height-50 active':IsOTPLogin}"><div *ngIf="IsOTPLogin"  class="buttonloader"><div></div><div></div><div></div><div></div></div><div *ngIf="!IsOTPLogin">Login</div> </a>
+      </div>
+    </div>
+  </div>
+</div>

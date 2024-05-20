@@ -1,0 +1,11 @@
+.tawk-min-container, .tawk-min-container .tawk-button { display: none !important; z-index: -3 !important; }
+.tawk-min-container { display: none !important; }
+video {
+    vertical-align: middle;
+    border-style: none;
+}
+video.dv_sub_cate_banner {
+    width: 100%;
+    border-radius: 4px;
+}
+.dv_sub_content { padding-top: 50px; }
